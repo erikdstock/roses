@@ -1,0 +1,17 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Button renders correctly 1`] = `
+.c0 {
+  border: solid 1px #DB1D33;
+  border-radius: 3px;
+  padding: 16px;
+  background: #DB1D33;
+  color: #ffffff;
+}
+
+<button
+  className="c0"
+>
+  Click me
+</button>
+`;
