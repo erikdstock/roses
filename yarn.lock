@@ -752,6 +752,11 @@
   resolved "https://registry.yarnpkg.com/@types/jest/-/jest-23.3.14.tgz#37daaf78069e7948520474c87b80092ea912520a"
   integrity sha512-Q5hTcfdudEL2yOmluA1zaSyPbzWPmJ3XfSWeP3RyoYvS9hnje1ZyagrZOuQ6+1nQC1Gw+7gap3pLNL3xL6UBug==
 
+"@types/node@*":
+  version "11.11.3"
+  resolved "https://registry.yarnpkg.com/@types/node/-/node-11.11.3.tgz#7c6b0f8eaf16ae530795de2ad1b85d34bf2f5c58"
+  integrity sha512-wp6IOGu1lxsfnrD+5mX6qwSwWuqsdkKKxTN4aQc4wByHAKZJf9/D4KXPQ1POUjEbnCP5LMggB0OEFNY9OTsMqg==
+
 "@types/prop-types@*":
   version "15.7.0"
   resolved "https://registry.yarnpkg.com/@types/prop-types/-/prop-types-15.7.0.tgz#4c48fed958d6dcf9487195a0ef6456d5f6e0163a"
@@ -762,14 +767,6 @@
   resolved "https://registry.yarnpkg.com/@types/react-dom/-/react-dom-16.8.2.tgz#9bd7d33f908b243ff0692846ef36c81d4941ad12"
   integrity sha512-MX7n1wq3G/De15RGAAqnmidzhr2Y9O/ClxPxyqaNg96pGyeXUYPSvujgzEVpLo9oIP4Wn1UETl+rxTN02KEpBw==
   dependencies:
-    "@types/react" "*"
-
-"@types/react-native@*":
-  version "0.57.40"
-  resolved "https://registry.yarnpkg.com/@types/react-native/-/react-native-0.57.40.tgz#a227acb6b2c7372cb678202df4cfe716ace9ce94"
-  integrity sha512-nCcF9gNYp/VeV5QBtHbn/VnXZG+T8EsMxZFx8qqZfBe1gxJUsldXgOXYd1kcrrYzUX0LqG/KipDBX++fB2qQ0g==
-  dependencies:
-    "@types/prop-types" "*"
     "@types/react" "*"
 
 "@types/react-test-renderer@^16.0.3":
@@ -787,13 +784,13 @@
     "@types/prop-types" "*"
     csstype "^2.2.0"
 
-"@types/styled-components@^4.1.5":
-  version "4.1.12"
-  resolved "https://registry.yarnpkg.com/@types/styled-components/-/styled-components-4.1.12.tgz#62c19bd1aa37b1a904d36c179a0fec66c24ac99c"
-  integrity sha512-Du0bltHm5sWkDnXzYi6cMNhnSKWHQW6//at359DtRJNfjeG1SdtqQPX6jiVtrUkBJ1JsjxqT18DssYBLJ/fg/A==
+"@types/styled-components@4.1.8":
+  version "4.1.8"
+  resolved "https://registry.yarnpkg.com/@types/styled-components/-/styled-components-4.1.8.tgz#15c8a53bb4b9066e528fafb7558963dee5690ae0"
+  integrity sha512-NrG0wmB9Rafy5i00GFxUM/uEge148bX2QPr+Q/MI2fXrew6WOp1hN2A3YEG0AeT45z47CMdJ3BEffPsdQCWayA==
   dependencies:
+    "@types/node" "*"
     "@types/react" "*"
-    "@types/react-native" "*"
     csstype "^2.2.0"
 
 "@vxna/mini-html-webpack-template@^0.1.7":
@@ -1843,7 +1840,12 @@ camelize@^1.0.0:
   resolved "https://registry.yarnpkg.com/camelize/-/camelize-1.0.0.tgz#164a5483e630fa4321e5af07020e531831b2609b"
   integrity sha1-FkpUg+Yw+kMh5a8HAg5TGDGyYJs=
 
-caniuse-lite@^1.0.30000884, caniuse-lite@^1.0.30000948:
+caniuse-lite@^1.0.30000884:
+  version "1.0.30000950"
+  resolved "https://registry.yarnpkg.com/caniuse-lite/-/caniuse-lite-1.0.30000950.tgz#8c559d66e332b34e919d1086cc6d29c1948856ae"
+  integrity sha512-Cs+4U9T0okW2ftBsCIHuEYXXkki7mjXmjCh4c6PzYShk04qDEr76/iC7KwhLoWoY65wcra1XOsRD+S7BptEb5A==
+
+caniuse-lite@^1.0.30000948:
   version "1.0.30000949"
   resolved "https://registry.yarnpkg.com/caniuse-lite/-/caniuse-lite-1.0.30000949.tgz#8cbc6d2f141bc32362f7467b45a2dcae8e64c84b"
   integrity sha512-jIF/jphmuJ7oAWmfYO0qAxRAvCa0zNquALO6Ykfe6qo8qwh882Cgcs+OWmm21L3x6nu4TVLFeEZ9/q6VuKCfSg==
