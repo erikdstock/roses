@@ -1,1 +1,1 @@
-import 'jest-styled-compiionents'
+import 'jest-styled-components'

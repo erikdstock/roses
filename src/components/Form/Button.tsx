@@ -1,47 +1,48 @@
-import React from "react"
-import styled from '../../styled-components';
-import { colors } from '../../theme'
-import { respondTo, respondOnlyTo } from "../../responsive/media"
-export interface Props {
-  /** Button content */
-  children: React.ReactNode,
+import React from 'react';
+import { Button as ReButton, ButtonProps } from 'rebass'
 
-  /** Switch to outline visual style */
-  outline?: boolean,
+export const Button = (props: ButtonProps) => <ReButton variant="primary" {...props} />
 
-  /** Use parent container's full width */
-  block?: boolean
-}
+// export interface Props {
+//   /** Button content */
+//   children: React.ReactNode,
 
-/**
- * A Button.
- */
-const Button: React.FunctionComponent<Props> = (props) => {
-  return <StyledButton {...props} />
-}
-Button.defaultProps = { outline: false, block: false }
+//   /** Switch to outline visual style */
+//   outline?: boolean,
 
-export default Button
+//   /** Use parent container's full width */
+//   block?: boolean
+// }
 
-const StyledButton = styled.button<Props>`
-  border: solid 1px ${colors.red};
-  border-radius: 3px;
-  padding: 16px;
-  ${({outline}) => outline
-    ? `background: ${colors.white};
-    color: ${colors.red};`
-    : `background: ${colors.red};
-    color: ${colors.white};`
-  }
-  ${({block}) => block && `
-    display: block;
-    width: 100%;
-  `}
-  `
-  // ${respondTo.s`
-  //   color: papayawhip;
-  // `}
-  // ${respondOnlyTo.xs`
-  //   color: tomato;
-  // `}
+// /**
+//  * A Button.
+//  */
+// const Button: React.FunctionComponent<Props> = (props) => {
+//   return <StyledButton {...props} />
+// }
+// Button.defaultProps = { outline: false, block: false }
+
+// export default Button
+
+// const StyledButton = styled.button<Props>`
+//   border: solid 1px ${colors.red};
+//   border-radius: 3px;
+//   padding: 16px;
+//   ${({outline}) => outline
+//     ? `background: ${colors.white};
+//     color: ${colors.red};`
+//     : `background: ${colors.red};
+//     color: ${colors.white};`
+//   }
+//   ${({block}) => block && `
+//     display: block;
+//     width: 100%;
+//   `}
+//   `
+//   // ${respondTo.s`
+//   //   color: papayawhip;
+//   // `}
+//   // ${respondOnlyTo.xs`
+//   //   color: tomato;
+//   // `}
   
