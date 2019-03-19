@@ -1,14 +1,22 @@
 ---
 Button
 ---
-import { Button  } from './Button.tsx'
-// import { withTheme } from '../Theme'
+import { Button } from './Button.tsx'
+import { Playground, PropsTable } from 'docz'
 
-### Default Button:
-<Button  onClick={() => alert("ouch")}>Normie Button</Button>
+# Buttons
 
-### Default Button:
-<Button variant="outline" onClick={() => alert("🤔")}>Weird Button!</Button>
+Standard Rebass Buttons.
+
+### Primary:
+<Playground>
+  <Button onClick={() => alert("ouch")}>Normie Button</Button>
+</Playground>
+
+### Outline:
+<Playground>
+  <Button variant="outline" onClick={() => alert("🤔")}>Weird Button!</Button>
+</Playground>
 
 
 
