@@ -1,7 +1,7 @@
 import React from 'react';
 import { Button as ReButton, ButtonProps } from 'rebass'
 
-export const Button = (props: ButtonProps) => <ReButton variant="primary" {...props} />
+export const Button = (props: {variant?: string}) => <ReButton variant="primary" {...props} />
 
 // export interface Props {
 //   /** Button content */

@@ -1,3 +1,4 @@
+import { NONAME } from "dns";
 
 /**
  * An interface matching what what rebass expects.
@@ -45,16 +46,18 @@ export interface RebassTheme {
 }
 
 const colors = {
-  red: "#DB1D33",
-  text: "#024",
-  blue: "#07c",
-  black: "#000000",
-  white: "#ffffff",
-  faintGray: "#f0f0f0",
-  lightGray: "#d5d5d5",
-  darkGray: "#242423",
-  inactiveGray: "#8f8f8f",
-  uiGray: "#444444"
+  red: "#db1d33",
+  black: "#000",
+  white: "#fff",
+  gray: {
+    "1": "hsl(0,0%,32%)",
+    "2": "hsl(0,0%,47%)",
+    "3": "hsl(0,0%,58%)",
+    "4": "hsl(0,0%,68%)",
+    "5": "hsl(0,0%,77%)",
+    "6": "hsl(0,0%,85%)",
+    "7": "hsl(0,0%,93%)",
+  }
 }
 
 export const defaultTheme: RebassTheme = {
@@ -73,8 +76,12 @@ export const defaultTheme: RebassTheme = {
     outline: {
       color: colors.red,
       backgroundColor: colors.white,
-      border: `1px solid ${colors.red}`,
       boxShadow: 'inset 0 0 0 2px'
-    }
+    },
+    inactive: {
+      backgroundColor: colors.gray[5],
+      color: colors.white,
+      disabled: true
+    },
   }
 }

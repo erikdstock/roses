@@ -2,6 +2,7 @@
 Button
 ---
 import { Button } from './Button.tsx'
+import { Box } from 'rebass'
 import { Playground, PropsTable } from 'docz'
 
 # Buttons
@@ -10,19 +11,20 @@ Standard Rebass Buttons.
 
 ### Primary:
 <Playground>
-  <Button onClick={() => alert("ouch")}>Normie Button</Button>
+  <Box p={3}>
+    <Button onClick={() => alert("ouch")}>Normie</Button>
+  <Box>
 </Playground>
 
-### Outline:
-<Playground>
-  <Button variant="outline" onClick={() => alert("🤔")}>Weird Button!</Button>
+### Variants:
+<Playground >
+  <Box p={3}>
+    <Button variant="inactive" onClick={() => alert("🤔")}>Inactive</Button>
+  </Box>
+  <Box p={3}>
+    <Button variant="outline" onClick={() => alert("🤔")}>Inverted</Button>
+  </Box>
 </Playground>
 
 
 
-
-```html
-<Button size="large">Push Me</Button>
-```
-
-Any [Markdown](http://daringfireball.net/projects/markdown/) is **allowed** _here_.
