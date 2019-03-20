@@ -1,11 +1,13 @@
 import React from "react";
 import { ThemeProvider } from "styled-components";
-import { defaultTheme, RebassTheme } from "./theme";
+// import { defaultTheme, RebassTheme } from "./theme";
+import { defaultTheme } from "./theme";
 
-export { defaultTheme, RebassTheme };
+export { defaultTheme };
 
 interface Props {
-  theme?: RebassTheme;
+  // theme?: RebassTheme;
+  theme?: object;
 }
 
 

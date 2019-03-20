@@ -1,5 +1,3 @@
-import { NONAME } from "dns";
-
 /**
  * An interface matching what what rebass expects.
  * See https://rebassjs.org/theming
