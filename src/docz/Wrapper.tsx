@@ -1,1 +1,1 @@
-export { Theme as default } from '../components/Theme'
+export { Theme as default } from '../Theme'

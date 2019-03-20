@@ -1,7 +1,6 @@
 import React from 'react'
 import {Button} from '../Button'
 import renderer from 'react-test-renderer'
-// import { colors } from '../../Theme';
 
 describe("Button", () => {
   const tree = renderer.create(<Button>Click me</Button>).toJSON()
