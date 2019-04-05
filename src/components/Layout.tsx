@@ -1,6 +1,11 @@
-import styled from "styled-components"
-import { borderColor, borders, BorderColorProps, BorderProps } from "styled-system"
 import { Box, Flex } from "rebass"
+import styled from "styled-components"
+import {
+  borderColor,
+  BorderColorProps,
+  BorderProps,
+  borders,
+} from "styled-system"
 
 const BorderBox = styled(Box)<BorderProps & BorderColorProps>`
   ${borders}

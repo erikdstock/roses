@@ -7,7 +7,7 @@ const BreakpointWidth: Record<string, number> = {
   m: 768,
   l: 992,
   xl: 1200,
-  xxl: 1400
+  xxl: 1400,
 }
 
 const fonts: Record<string, number> = {
@@ -16,48 +16,55 @@ const fonts: Record<string, number> = {
   m: 18,
   l: 20,
   xl: 24,
-  xxl: 28
+  xxl: 28,
 }
 
-type BreakpointCssMap = Record<keyof typeof BreakpointWidth, ThemedCssFunction<any>>;
+type BreakpointCssMap = Record<
+  keyof typeof BreakpointWidth,
+  ThemedCssFunction<any>
+>
 
-const mediaBase = (label: keyof typeof BreakpointWidth) => (...args: any[]) => css`
+const mediaBase = (label: keyof typeof BreakpointWidth) => (
+  ...args: any[]
+) => css`
   line-height: 1.4;
   font-size: ${fonts[label]};
-  ${args} 
+  ${args}
 `
 
 export const respondTo = Object.keys(BreakpointWidth).reduce(
-  (mediaQueries, label) => (
-    {
-      ...mediaQueries,
-      [label]: (...args: any[]) => css`
-        @media (min-width: ${BreakpointWidth[label]}px) {
-          ${mediaBase(label)`${args}`}
-        }
-      `
-    }
-  ),
+  (mediaQueries, label) => ({
+    ...mediaQueries,
+    [label]: (...args: any[]) => css`
+      @media (min-width: ${BreakpointWidth[label]}px) {
+        ${mediaBase(label)`${args}`}
+      }
+    `,
+  }),
   {} as BreakpointCssMap
 )
 
 const getBreakpointMaxQuery = (label: keyof typeof BreakpointWidth) => {
   const nextBreakpointIndex = breakpointOrder.indexOf(label) + 1
   return breakpointOrder.length > nextBreakpointIndex
-    ? css` and (max-width: ${BreakpointWidth[breakpointOrder[nextBreakpointIndex]] - 0.01}px)`
+    ? css` and (max-width: ${BreakpointWidth[
+        breakpointOrder[nextBreakpointIndex]
+      ] - 0.01}px)`
     : ""
 }
 
-export const respondOnlyTo: BreakpointCssMap = Object.keys(BreakpointWidth).reduce(
-  (mediaQueries, label) => (
-    {
-      ...mediaQueries,
-      [label]: (...args: any[]) => css`
-        @media (min-width: ${BreakpointWidth[label]}px)${getBreakpointMaxQuery(label)} {
-          ${mediaBase(label)`${args}`}
-        }
-      `
-    }
-  ),
+export const respondOnlyTo: BreakpointCssMap = Object.keys(
+  BreakpointWidth
+).reduce(
+  (mediaQueries, label) => ({
+    ...mediaQueries,
+    [label]: (...args: any[]) => css`
+      @media (min-width: ${BreakpointWidth[label]}px) ${getBreakpointMaxQuery(
+          label
+        )} {
+        ${mediaBase(label)`${args}`}
+      }
+    `,
+  }),
   {} as BreakpointCssMap
 )

@@ -1,6 +1,6 @@
-import React from 'react'
-import {Button} from './Button'
-import renderer from 'react-test-renderer'
+import React from "react"
+import renderer from "react-test-renderer"
+import { Button } from "./Button"
 
 describe("Button", () => {
   const tree = renderer.create(<Button>Click me</Button>).toJSON()

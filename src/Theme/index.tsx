@@ -1,22 +1,21 @@
-import React from "react";
-import { ThemeProvider } from "styled-components";
+import React from "react"
+import { ThemeProvider } from "styled-components"
 // import { defaultTheme, RebassTheme } from "./theme";
-import { defaultTheme } from "./theme";
+import { defaultTheme } from "./theme"
 
-export { defaultTheme };
+export { defaultTheme }
 
 interface Props {
   // theme?: RebassTheme;
-  theme?: object;
+  theme?: object
 }
-
 
 /**
  * A theme provider
  */
 export const CommonsTheme: React.FunctionComponent<Props> = ({
   children,
-  theme = defaultTheme
+  theme = defaultTheme,
 }) => (
   <ThemeProvider theme={theme}>
     <>
@@ -26,4 +25,4 @@ export const CommonsTheme: React.FunctionComponent<Props> = ({
       }
     </>
   </ThemeProvider>
-);
+)

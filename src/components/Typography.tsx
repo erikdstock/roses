@@ -1,5 +1,5 @@
 import React from "react"
-import { Text as BaseText, Heading as BaseHeading, TextProps } from "rebass"
+import { Heading as BaseHeading, Text as BaseText, TextProps } from "rebass"
 
 /* Alternative way to provide default styles to rebass components:
  * I feel like this can be better solved if there is ever a typescript design lib (keeping props interfaces etc)
@@ -39,7 +39,15 @@ export const Heading: React.FunctionComponent<TextProps> = props => (
  * h6 ".67rem"
  */
 
-export const H1: React.FunctionComponent<TextProps> = props => <Heading as="h1" fontSize="2rem" {...props} />
-export const H2: React.FunctionComponent<TextProps> = props => <Heading as="h2" fontSize="1.5rem" {...props} />
-export const H3: React.FunctionComponent<TextProps> = props => <Heading as="h3" fontSize="1.17rem" {...props} />
-export const H4: React.FunctionComponent<TextProps> = props => <Heading as="h4" fontSize="1.12rem" {...props} />
+export const H1: React.FunctionComponent<TextProps> = props => (
+  <Heading as="h1" fontSize="2rem" {...props} />
+)
+export const H2: React.FunctionComponent<TextProps> = props => (
+  <Heading as="h2" fontSize="1.5rem" {...props} />
+)
+export const H3: React.FunctionComponent<TextProps> = props => (
+  <Heading as="h3" fontSize="1.17rem" {...props} />
+)
+export const H4: React.FunctionComponent<TextProps> = props => (
+  <Heading as="h4" fontSize="1.12rem" {...props} />
+)

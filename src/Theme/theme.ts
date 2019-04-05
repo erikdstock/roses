@@ -5,19 +5,19 @@
 export interface RebassTheme {
   /* Array of strings representing viewport widths to use for min-width media queries. */
   breakpoints?: string[]
-  
+
   /* Array of numbers to use as a typographic scale */
-  fontSizes?:	[number|string]
-  
+  fontSizes?: [number | string]
+
   /* Color names that can be used in color, bg, and borderColor props (nested objects can be accessed via dot notation) */
   colors?: object
-  
+
   /* Array of numbers for use as margin and pixel values */
   space?: object
 
   /* Values for the fontFamily prop */
   fonts?: object
-  
+
   /* Array or Object values for fontWeight prop */
   fontWeights?: object
 
@@ -28,7 +28,7 @@ export interface RebassTheme {
   letterSpacings?: object
 
   /* Array or Object	Values for boxShadow prop */
-  shadows?:	object
+  shadows?: object
 
   /* Array or Object	Values for border props */
   borders?: object
@@ -55,14 +55,14 @@ const colors = {
     "5": "hsl(0,0%,77%)",
     "6": "hsl(0,0%,85%)",
     "7": "hsl(0,0%,93%)",
-  }
+  },
 }
 
 export const defaultTheme: RebassTheme = {
   fonts: {
     serif: "'IBM Plex Serif', serif",
     sans: "Chivo, Helvetica, Sans",
-    mono: "'Fira Mono', monospace"
+    mono: "'Fira Mono', monospace",
   },
 
   colors,
@@ -74,12 +74,12 @@ export const defaultTheme: RebassTheme = {
     outline: {
       color: colors.red,
       backgroundColor: colors.white,
-      boxShadow: 'inset 0 0 0 2px'
+      boxShadow: "inset 0 0 0 2px",
     },
     inactive: {
       backgroundColor: colors.gray[5],
       color: colors.white,
-      disabled: true
+      disabled: true,
     },
-  }
+  },
 }
