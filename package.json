@@ -29,7 +29,7 @@
     "@types/styled-system": "^3.2.2",
     "react": "^16.7.0",
     "react-dom": "^16.7.0",
-    "rebass": "^3.0.1",
+    "rebass": "^3.1.0",
     "styled-system": "^4.0.5"
   },
   "devDependencies": {
@@ -81,12 +81,6 @@
       "yarn prettier --write",
       "git add"
     ]
-  },
-  "prettier": {
-    "semi": false,
-    "singleQuote": false,
-    "trailingComma": "es5",
-    "bracketSpacing": true
   },
   "jest": {
     "moduleFileExtensions": [

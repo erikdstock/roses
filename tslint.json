@@ -18,7 +18,7 @@
     "trailing-comma": false,
     "variable-name": [true, "ban-keywords", "allow-leading-underscore"],
     "completed-docs": {
-      "severity": "warning",
+      "severity": "off",
       "options": {
         "functions": {
           "visibilities": ["exported"]

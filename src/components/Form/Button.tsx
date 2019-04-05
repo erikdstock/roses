@@ -1,13 +1,8 @@
 import React from "react"
-import { Button as ReButton } from "rebass"
+import { Button as ReButton, ButtonProps } from "rebass"
 // TODO: Block button, figure out how to document props
 
-interface Props {
-  variant?: string
-}
-export const Button: React.FunctionComponent<Props> = (props: {
-  variant?: string
-}) => (
+export const Button: React.FunctionComponent<ButtonProps> = props => (
   <ReButton
     variant="primary"
     disabled={props.disabled || props.variant === "disabled"}

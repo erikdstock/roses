@@ -1,0 +1,37 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Button renders correctly 1`] = `
+.c0 {
+  box-sizing: border-box;
+  margin: 0;
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 16px;
+  padding-right: 16px;
+  font-size: inherit;
+  color: white;
+  background-color: blue;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  display: inline-block;
+  text-align: center;
+  line-height: inherit;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  font-weight: bold;
+  border: 0;
+  border-radius: 4px;
+  border-radius: 4px;
+}
+
+<button
+  className="sc-bdVaJa c0"
+  color="white"
+  disabled={false}
+  fontSize="inherit"
+  fontWeight="bold"
+>
+  Click me
+</button>
+`;
