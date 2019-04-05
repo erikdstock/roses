@@ -10,8 +10,6 @@
     "build:js": "babel src --out-dir lib --extensions \".ts,.tsx\" -s --source-maps inline",
     "build:types": "tsc --declaration --emitDeclarationOnly --listEmittedFiles",
     "build:watch": "concurrently --raw --kill-others 'yarn build:js -w' 'yarn build:types -w'",
-    "docz:dev": "docz dev",
-    "docz:build": "docz build",
     "test": "jest",
     "type-check": "tsc --noEmit",
     "type-check:watch": "yarn type-check -- --watch"
@@ -41,8 +39,6 @@
     "babel-loader": "8.0.4",
     "babel-plugin-styled-components": "^1.10.0",
     "concurrently": "^4.1.0",
-    "docz": "^0.13.7",
-    "docz-theme-default": "^0.13.7",
     "jest": "^23.6.0",
     "jest-styled-components": "^6.3.1",
     "react-docgen-typescript": "^1.12.3",
