@@ -1,0 +1,26 @@
+{
+  "presets": [
+    "@babel/typescript",
+    "@babel/react",
+    [
+      "@babel/env",
+      {
+        "targets": {
+          "browsers": ["last 2 versions"]
+        }
+      }
+    ]
+  ],
+  "plugins": [
+    "babel-plugin-add-react-displayname",
+    "babel-plugin-styled-components",
+    "@babel/plugin-proposal-class-properties",
+    [
+      "module-resolver",
+      {
+        "extensions": [".ts", ".tsx"],
+        "root": ["./src"]
+      }
+    ]
+  ]
+}
