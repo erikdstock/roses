@@ -3,5 +3,6 @@
     "Plex",
     "docz",
     "monospace"
-  ]
+  ],
+  "prettier.semi": false
 }

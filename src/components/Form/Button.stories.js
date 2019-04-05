@@ -2,20 +2,21 @@ import React from "react";
 
 import { storiesOf, addDecorator } from "@storybook/react";
 import { action } from "@storybook/addon-actions";
-import { linkTo } from "@storybook/addon-links";
+import { Flex } from "rebass";
 
 import { Button } from "components/Form/Button";
 
-storiesOf("Welcome", module).add("to Storybook", () => (
-  <Welcome showApp={linkTo("Button")} />
-));
-
-storiesOf("Button", module)
+storiesOf("Form/Button", module)
   .add("with text", () => (
     <Button onClick={action("clicked")}>Hello Button</Button>
   ))
-  .add("with some emoji", () => (
-    <Flex justifyContent="space-around">
-      <Button onClick={() => alert("🌹")}>Normie</Button>
+  .add("variants", () => (
+    <Flex width="500px" justifyContent="space-around">
+      <Button variant="outline" onClick={action("clicked")}>
+        Outline
+      </Button>
+      <Button variant="inactive" onClick={action("clicked")}>
+        Inactive
+      </Button>
     </Flex>
   ));
