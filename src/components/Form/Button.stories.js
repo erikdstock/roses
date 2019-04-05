@@ -1,10 +1,10 @@
-import React from "react";
+import React from "react"
 
-import { storiesOf, addDecorator } from "@storybook/react";
-import { action } from "@storybook/addon-actions";
-import { Flex } from "rebass";
+import { action } from "@storybook/addon-actions"
+import { addDecorator, storiesOf } from "@storybook/react"
+import { Flex } from "rebass"
 
-import { Button } from "components/Form/Button";
+import { Button } from "components/Form/Button"
 
 storiesOf("Form/Button", module)
   .add("with text", () => (
@@ -19,4 +19,4 @@ storiesOf("Form/Button", module)
         Inactive
       </Button>
     </Flex>
-  ));
+  ))
