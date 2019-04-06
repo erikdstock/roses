@@ -5,8 +5,8 @@
   "license": "MIT",
   "scripts": {
     "start": "yarn docz dev",
-    "clean-lib": "rm -rf ./lib",
-    "build": "yarn run clean-lib && yarn build:types && npm run build:js",
+    "clean": "rm -rf ./lib",
+    "build": "yarn run clean && yarn build:types && npm run build:js",
     "build:js": "babel src --out-dir lib --extensions \".ts,.tsx\" -s --source-maps inline",
     "build:types": "tsc --declaration --emitDeclarationOnly --listEmittedFiles",
     "build:watch": "concurrently --raw --kill-others 'yarn build:js -w' 'yarn build:types -w'",
@@ -16,7 +16,7 @@
     "storybook": "start-storybook -p 6006",
     "build-storybook": "build-storybook",
     "lint": "tslint --project tsconfig.json 'src/*/**' && yarn prettier-check",
-    "prepublishOnly": "yarn clean && yarn compile && yarn type-declarations",
+    "prepublishOnly": "yarn build",
     "prettier-check": "prettier --check 'src/**/*.{ts,tsx}'",
     "prettier-project": "yarn prettier --write 'src/**/*.{ts,tsx}'"
   },
