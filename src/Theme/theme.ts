@@ -43,6 +43,7 @@ export const defaultTheme: CommonsTheme = {
     mono: "'Fira Mono', monospace",
   },
 
+  radii: [0, 2, 3, 5, 10],
   buttons: {
     primary: {
       color: colors.white,

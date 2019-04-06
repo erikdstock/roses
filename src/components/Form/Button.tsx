@@ -5,6 +5,7 @@ import { Button as ReButton, ButtonProps } from "rebass"
 export const Button: React.FunctionComponent<ButtonProps> = props => (
   <ReButton
     variant="primary"
+    borderRadius={3}
     disabled={props.disabled || props.variant === "disabled"}
     {...props}
   />

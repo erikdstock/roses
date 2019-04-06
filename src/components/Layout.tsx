@@ -5,11 +5,17 @@ import {
   BorderColorProps,
   BorderProps,
   borders,
+  color,
+  space,
 } from "styled-system"
 
 const BorderBox = styled(Box)<BorderProps & BorderColorProps>`
-  ${borders}
-  ${borderColor}
+  ${color};
+  ${space};
+  ${borders};
+  ${borderColor};
+  border-width: 2px;
+  border-style: solid;
 `
 
 export { BorderBox, Box, Flex }
