@@ -1,6 +1,6 @@
 storybook-static/
-.babel-cache
-
+.babel-cache/
+lib/
 # Created by https://www.gitignore.io/api/node
 # Edit at https://www.gitignore.io/?templates=node
 

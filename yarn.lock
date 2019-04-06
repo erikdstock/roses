@@ -943,6 +943,11 @@
     lodash "^4.17.11"
     to-fast-properties "^2.0.0"
 
+"@emmetio/extract-abbreviation@0.1.6":
+  version "0.1.6"
+  resolved "https://registry.yarnpkg.com/@emmetio/extract-abbreviation/-/extract-abbreviation-0.1.6.tgz#e4a9856c1057f0aff7d443b8536477c243abe28c"
+  integrity sha512-Ce3xE2JvTSEbASFbRbA1gAIcMcZWdS2yUYRaQbeM0nbOzaZrUYfa3ePtcriYRZOZmr+CkKA+zbjhvTpIOAYVcw==
+
 "@emotion/babel-utils@^0.6.4":
   version "0.6.10"
   resolved "https://registry.yarnpkg.com/@emotion/babel-utils/-/babel-utils-0.6.10.tgz#83dbf3dfa933fae9fc566e54fbb45f14674c6ccc"
@@ -1624,10 +1629,19 @@
     "@types/styled-components" "*"
     "@types/styled-system" "*"
 
-"@types/styled-components@*", "@types/styled-components@^4.1.8":
+"@types/styled-components@*":
   version "4.1.12"
   resolved "https://registry.yarnpkg.com/@types/styled-components/-/styled-components-4.1.12.tgz#62c19bd1aa37b1a904d36c179a0fec66c24ac99c"
   integrity sha512-Du0bltHm5sWkDnXzYi6cMNhnSKWHQW6//at359DtRJNfjeG1SdtqQPX6jiVtrUkBJ1JsjxqT18DssYBLJ/fg/A==
+  dependencies:
+    "@types/react" "*"
+    "@types/react-native" "*"
+    csstype "^2.2.0"
+
+"@types/styled-components@^4.1.8":
+  version "4.1.13"
+  resolved "https://registry.yarnpkg.com/@types/styled-components/-/styled-components-4.1.13.tgz#7373e0a084dedf6982a35d5bc2ef07e023e18e2e"
+  integrity sha512-P+jc7EojMVz7S8WhX7EbCPzK1ZZvU8fzib4+CDagF2DPBiEJkLj6KE42xiDN+AZUuyiJUX2iylGMZB2N3H+Exw==
   dependencies:
     "@types/react" "*"
     "@types/react-native" "*"
@@ -6515,6 +6529,11 @@ json5@^1.0.1:
   dependencies:
     minimist "^1.2.0"
 
+jsonc-parser@^1.0.0:
+  version "1.0.3"
+  resolved "https://registry.yarnpkg.com/jsonc-parser/-/jsonc-parser-1.0.3.tgz#1d53d7160e401a783dbceabaad82473f80e6ad7e"
+  integrity sha512-hk/69oAeaIzchq/v3lS50PXuzn5O2ynldopMC+SWBql7J2WtdptfB9dy8Y7+Og5rPkTCpn83zTiO8FMcqlXJ/g==
+
 jsonfile@^2.1.0:
   version "2.4.0"
   resolved "https://registry.yarnpkg.com/jsonfile/-/jsonfile-2.4.0.tgz#3736a2b428b87bbda0cc83b53fa3d633a35c2ae8"
@@ -10251,10 +10270,25 @@ typedarray@^0.0.6:
   resolved "https://registry.yarnpkg.com/typedarray/-/typedarray-0.0.6.tgz#867ac74e3864187b1d3d47d996a78ec5c8830777"
   integrity sha1-hnrHTjhkGHsdPUfZlqeOxciDB3c=
 
-typescript@^3.2.4:
-  version "3.4.1"
-  resolved "https://registry.yarnpkg.com/typescript/-/typescript-3.4.1.tgz#b6691be11a881ffa9a05765a205cb7383f3b63c6"
-  integrity sha512-3NSMb2VzDQm8oBTLH6Nj55VVtUEpe/rgkIzMir0qVoLyjDZlnMBva0U6vDiV3IH+sl/Yu6oP5QwsAQtHPmDd2Q==
+typescript-styled-plugin@^0.14.0:
+  version "0.14.0"
+  resolved "https://registry.yarnpkg.com/typescript-styled-plugin/-/typescript-styled-plugin-0.14.0.tgz#6691a8e673ed9eacee52c38fecd87d428eff0f71"
+  integrity sha512-RGa+tDPr7OFd+vCEvCYwtNhQSfTFaQebHXiiSABOnjwVE/M0q3vxZcB+Ppp9UGE1PDuLJ9EQRUc7VdqTZtk+oQ==
+  dependencies:
+    typescript-template-language-service-decorator "^2.2.0"
+    vscode-css-languageservice "^3.0.13-next.12"
+    vscode-emmet-helper "1.2.11"
+    vscode-languageserver-types "^3.13.0"
+
+typescript-template-language-service-decorator@^2.2.0:
+  version "2.2.0"
+  resolved "https://registry.yarnpkg.com/typescript-template-language-service-decorator/-/typescript-template-language-service-decorator-2.2.0.tgz#4ee6d580f307fb9239978e69626f2775b8a59b2a"
+  integrity sha512-xiolqt1i7e22rpqMaprPgSFVgU64u3b9n6EJlAaUYE61jumipKAdI1+O5khPlWslpTUj80YzjUKjJ2jxT0D74w==
+
+typescript@^3.4.2:
+  version "3.4.2"
+  resolved "https://registry.yarnpkg.com/typescript/-/typescript-3.4.2.tgz#9ed4e6475d906f589200193be056f5913caed481"
+  integrity sha512-Og2Vn6Mk7JAuWA1hQdDQN/Ekm/SchX80VzLhjKN9ETYrIepBFAd8PkOdOTK2nKt0FCkmMZKBJvQ1dV1gIxPu/A==
 
 ua-parser-js@^0.7.18:
   version "0.7.19"
@@ -10520,6 +10554,33 @@ vm-browserify@0.0.4:
   integrity sha1-XX6kW7755Kb/ZflUOOCofDV9WnM=
   dependencies:
     indexof "0.0.1"
+
+vscode-css-languageservice@^3.0.13-next.12:
+  version "3.0.13"
+  resolved "https://registry.yarnpkg.com/vscode-css-languageservice/-/vscode-css-languageservice-3.0.13.tgz#1788735b65fde54181ea458e6a52cc2bd6dd9126"
+  integrity sha512-RWkO/c/A7iXhHEy3OuEqkCqavDjpD4NF2Ca8vjai+ZtEYNeHrm1ybTnBYLP4Ft1uXvvaaVtYA9HrDjD6+CUONg==
+  dependencies:
+    vscode-languageserver-types "^3.13.0"
+    vscode-nls "^4.0.0"
+
+vscode-emmet-helper@1.2.11:
+  version "1.2.11"
+  resolved "https://registry.yarnpkg.com/vscode-emmet-helper/-/vscode-emmet-helper-1.2.11.tgz#4de78223666bf917eb6dc4b225b6c40f6901950c"
+  integrity sha512-ms6/Z9TfNbjXS8r/KgbGxrNrFlu4RcIfVJxTZ2yFi0K4gn+Ka9X1+8cXvb5+5IOBGUrOsPjR0BuefdDkG+CKbQ==
+  dependencies:
+    "@emmetio/extract-abbreviation" "0.1.6"
+    jsonc-parser "^1.0.0"
+    vscode-languageserver-types "^3.6.0-next.1"
+
+vscode-languageserver-types@^3.13.0, vscode-languageserver-types@^3.6.0-next.1:
+  version "3.14.0"
+  resolved "https://registry.yarnpkg.com/vscode-languageserver-types/-/vscode-languageserver-types-3.14.0.tgz#d3b5952246d30e5241592b6dde8280e03942e743"
+  integrity sha512-lTmS6AlAlMHOvPQemVwo3CezxBp0sNB95KNPkqp3Nxd5VFEnuG1ByM0zlRWos0zjO3ZWtkvhal0COgiV1xIA4A==
+
+vscode-nls@^4.0.0:
+  version "4.1.0"
+  resolved "https://registry.yarnpkg.com/vscode-nls/-/vscode-nls-4.1.0.tgz#d9b4afb9477c2101517d6a6aac22f4d9ff066dda"
+  integrity sha512-zKsFWVzL1wlCezgaI3XiN42IT8DIPM1Qr+G+RBhiU3U0bJCdC8pPELakRCtuVT4wF3gBZjBrUDQ8mowL7hmgwA==
 
 w3c-hr-time@^1.0.1:
   version "1.0.1"
