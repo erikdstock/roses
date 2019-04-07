@@ -1,13 +1,18 @@
 {
-  "name": "@nycdsa/commons-ui",
-  "version": "1.0.0",
-  "description": "Common style guide and component library for React DSA projects",
+  "name": "roses",
+  "version": "0.1.0",
+  "description": "React component library feat. rebass styled-system styled-components",
   "license": "MIT",
+  "author": {
+    "email": "erik.d.stock@gmail.com",
+    "name": "Erik Stockmeier",
+    "url": "https://github.com/erikdstock"
+  },
   "scripts": {
     "start": "yarn docz dev",
-    "clean": "rm -rf ./lib",
+    "clean": "rm -rf ./dist",
     "build": "yarn run clean && yarn build:types && npm run build:js",
-    "build:js": "babel src --out-dir lib --extensions \".ts,.tsx\" -s --source-maps inline",
+    "build:js": "babel src --out-dir dist --extensions \".ts,.tsx\" -s --source-maps inline",
     "build:types": "tsc --declaration --emitDeclarationOnly --listEmittedFiles",
     "build:watch": "concurrently --raw --kill-others 'yarn build:js -w' 'yarn build:types -w'",
     "test": "jest",
@@ -24,7 +29,8 @@
     "type": "git",
     "url": "git+ssh://git@github.com/erikdstock/commons.git"
   },
-  "main": "./lib/index.js",
+  "main": "./dist/index.js",
+  "typings": "./dist/index.d.ts",
   "peerDependencies": {
     "react": "^16.7.0",
     "react-dom": "^16.7.0",
