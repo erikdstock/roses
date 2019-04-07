@@ -13,7 +13,7 @@ interface Props {
 /**
  * A theme provider
  */
-export const CommonsTheme: React.FunctionComponent<Props> = ({
+export const RosesTheme: React.FunctionComponent<Props> = ({
   children,
   theme = defaultTheme,
 }) => (
