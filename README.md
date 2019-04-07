@@ -11,7 +11,9 @@ _Typed react component library feat. rebass styled-system styled-components_
 ## Setup in your project
 
 Add the package:
+
 `yarn add roses`
+
 You may additionally need to install the following peer dependencies:
 
 ```
