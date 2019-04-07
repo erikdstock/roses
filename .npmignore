@@ -1,0 +1,2 @@
+# This file is required to keep npm from falling back to .gitignore,
+# which excludes /dist.
