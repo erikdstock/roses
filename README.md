@@ -42,16 +42,21 @@ const customTheme = {
   },
 }
 
-const DefaultThemedApp = ({ children }) => <RosesTheme>{children}</RosesTheme>
+// ThemeProvider Children must be a node, so <> Fragment </> is required
+const DefaultThemedApp = ({ children }) => (
+  <RosesTheme>
+    <>
+      <MyGlobalStyles />
+      {children}
+    </>
+  </RosesTheme>
+)
 
 const CustomThemedApp = ({ children }) => (
   <ThemeProvider theme={customTheme}>
     <>
       <MyGlobalStyles />
-      {
-        /* ThemeProvider Children must be a node, so <> Fragment </> is required */
-        children
-      }
+      {children}
     </>
   </ThemeProvider>
 )

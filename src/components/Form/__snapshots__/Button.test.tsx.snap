@@ -21,8 +21,8 @@ exports[`Button renders correctly 1`] = `
   text-decoration: none;
   font-weight: bold;
   border: 0;
-  border-radius: 4px;
-  border-radius: 4px;
+  border-radius: 3px;
+  border-radius: 3px;
 }
 
 <button
