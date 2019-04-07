@@ -9,7 +9,7 @@ import { Heading as BaseHeading, Text as BaseText, TextProps } from "rebass"
 
 export const Text: React.FunctionComponent<TextProps> = props => (
   <BaseText
-    color="darkGray"
+    color="gray.1"
     fontFamily="serif"
     fontWeight={400}
     fontSize={2}
@@ -21,7 +21,7 @@ export const Text: React.FunctionComponent<TextProps> = props => (
 
 export const Heading: React.FunctionComponent<TextProps> = props => (
   <BaseHeading
-    color="red"
+    color="gray.1"
     fontFamily="sans"
     fontWeight={400}
     lineHeight={1.2}
