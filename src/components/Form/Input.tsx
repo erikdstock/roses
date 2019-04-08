@@ -26,7 +26,7 @@ export const TextInput: React.FunctionComponent<TextInputProps & any> = ({
   return (
     <Wrapper
       py={3}
-      px={3}
+      px={2}
       borderColor={withBorder && borderColor}
       border={withBorder && "2px solid"}
       borderRadius={3}
@@ -54,6 +54,7 @@ const Label: React.FunctionComponent<{ for: string } & TextProps> = ({
     bg="white"
     fontFamily="sans"
     fontSize=".75rem"
+    px={1}
     {...restProps}
   >
     {children}
@@ -63,7 +64,7 @@ const Label: React.FunctionComponent<{ for: string } & TextProps> = ({
 const InputLabel = styled(Label)`
   position: absolute;
   top: -0.5rem;
-  left: ${themeGet("space.3")}px;
+  left: ${themeGet("space.1")}px;
 `
 
 const BlankTextInput = styled.input.attrs({ type: "text" })<{

@@ -52,6 +52,6 @@ storiesOf("Form/Input", module)
   ))
   .add("Bordered Text - Unlabeled", () => (
     <Flex width="500px">
-      <TextInput withBorder type="password" placeholder="Slogan" />
+      <TextInput withBorder type="password" placeholder="Enter Slogan" />
     </Flex>
   ))
