@@ -5,36 +5,47 @@ import { space, themeGet } from "styled-system"
 
 interface TextInputProps extends React.HTMLProps<HTMLButtonElement> {
   error?: boolean | string
-  withBorder: boolean
+  noBorder: boolean
   borderColor: string
   bg: string
 }
 
+const errorColor = "red"
+const disabledColor = "gray.4"
+
 export const TextInput: React.FunctionComponent<TextInputProps & any> = ({
   borderColor = "black",
   label,
-  withBorder,
+  noBorder,
   error,
   disabled,
   ...restProps
 }) => {
+  let labelColor
   if (error) {
-    borderColor = "red"
+    borderColor = errorColor
+    labelColor = errorColor
   } else if (disabled) {
-    borderColor = "gray.5"
+    borderColor = disabledColor
+    labelColor = disabledColor
   }
   return (
     <Wrapper
-      py={3}
+      py={2}
       px={2}
-      borderColor={withBorder && borderColor}
-      border={withBorder && "2px solid"}
+      borderColor={borderColor}
+      border={(!noBorder && "2px solid") || ""}
       borderRadius={3}
     >
-      {label && <InputLabel for={restProps.id}>{label}</InputLabel>}
+      {label && (
+        <InputLabel color={labelColor} htmlFor={restProps.id}>
+          {label}
+        </InputLabel>
+      )}
       <BlankTextInput
-        underline={!withBorder}
+        underline={noBorder}
         disabled={disabled}
+        error={error}
         {...restProps}
       />
     </Wrapper>
@@ -45,7 +56,7 @@ const Wrapper = styled(Card)`
   position: relative;
 `
 
-const Label: React.FunctionComponent<{ for: string } & TextProps> = ({
+const Label: React.FunctionComponent<TextProps> = ({
   children,
   ...restProps
 }) => (
@@ -69,13 +80,22 @@ const InputLabel = styled(Label)`
 
 const BlankTextInput = styled.input.attrs({ type: "text" })<{
   underline?: boolean
+  error?: string
+  disabled: boolean
 }>`
   border: none;
-  ${({ theme, underline }) =>
+  ${({ theme, underline, error, disabled }) =>
     underline &&
-    `border-bottom: solid 1px ${theme.colors["gray.3"] || "gray"}`};
+    `border-bottom: solid 1px ${
+      error
+        ? theme.colors.red
+        : disabled
+        ? theme.colors[disabledColor] || "lightGray"
+        : theme.colors["gray.3"] || "gray"
+    }`};
   width: 100%;
   font-size: 0.85rem;
+  line-height: 1.8;
   font-family: ${p => p.theme.fonts.sans};
   padding-bottom: ${p => p.theme.space[1]};
   ${space}
