@@ -8,21 +8,11 @@ import { TextInput } from "components/Form/Input"
 
 storiesOf("Form/Input", module)
   .add("Text", () => (
-    <Flex flexDirection="column" justifyContent="space-between" width="500px">
-      <TextInput
-        onClick={action("clicked")}
-        placeholder="Name"
-        name="input-name"
-        id="input"
-      />
-    </Flex>
-  ))
-  .add("Bordered Text", () => (
-    <Flex flexDirection="column" justifyContent="space-between" width="500px">
-      <Box my={3}>
+    <Flex mt={2} flexDirection="column" width="500px">
+      <Box mb={3}>
         <TextInput
+          noBorder
           label="Name"
-          withBorder
           placeholder="Hello"
           id="name"
           name="name"
@@ -30,8 +20,35 @@ storiesOf("Form/Input", module)
       </Box>
       <Box my={3}>
         <TextInput
+          noBorder
+          type="password"
+          label="Password (With Error)"
+          error="Profit is Theft"
+          placeholder=""
+          id="email"
+          name="email"
+        />
+      </Box>
+      <Box my={3}>
+        <TextInput
+          noBorder
+          id="tnd"
+          name="tendency"
+          label="Tendency"
+          disabled
+          placeholder="Disabled"
+        />
+      </Box>
+    </Flex>
+  ))
+  .add("Bordered Text", () => (
+    <Flex mt={2} flexDirection="column" width="500px">
+      <Box mb={3}>
+        <TextInput label="Name" placeholder="Hello" id="name" name="name" />
+      </Box>
+      <Box my={3}>
+        <TextInput
           label="Email"
-          withBorder
           error="Profit is Theft"
           placeholder="Error"
           id="email"
@@ -43,7 +60,6 @@ storiesOf("Form/Input", module)
           id="pwd"
           name="password"
           label="Password"
-          withBorder
           disabled
           placeholder="Disabled"
         />
@@ -51,7 +67,7 @@ storiesOf("Form/Input", module)
     </Flex>
   ))
   .add("Bordered Text - Unlabeled", () => (
-    <Flex width="500px">
-      <TextInput withBorder type="password" placeholder="Enter Slogan" />
+    <Flex mt={2} width="500px">
+      <TextInput type="password" placeholder="Enter Slogan" />
     </Flex>
   ))
