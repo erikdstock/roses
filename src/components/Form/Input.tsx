@@ -1,24 +1,24 @@
 import React from "react"
-import { Card, CardProps, Text, TextProps } from "rebass"
+import { Box, Card, Text, TextProps } from "rebass"
 import styled from "styled-components"
 import { space, themeGet } from "styled-system"
 
-interface TextInputProps extends React.HTMLProps<HTMLButtonElement> {
-  error?: boolean | string
-  noBorder: boolean
-  borderColor: string
-  bg: string
+interface TextInputProps extends React.HTMLProps<HTMLInputElement> {
+  borderColor?: string
+  error?: string
+  id: string
+  noBorder?: boolean
 }
 
 const errorColor = "red"
-const disabledColor = "gray.4"
+const disabledColor = "gray.3"
 
-export const TextInput: React.FunctionComponent<TextInputProps & any> = ({
+export const TextInput: React.FunctionComponent<TextInputProps> = ({
   borderColor = "black",
+  disabled = false,
+  error = null,
   label,
   noBorder,
-  error,
-  disabled,
   ...restProps
 }) => {
   let labelColor
@@ -30,30 +30,34 @@ export const TextInput: React.FunctionComponent<TextInputProps & any> = ({
     labelColor = disabledColor
   }
   return (
-    <Wrapper
-      py={2}
-      px={2}
-      borderColor={borderColor}
-      border={(!noBorder && "2px solid") || ""}
-      borderRadius={3}
-    >
-      {label && (
-        <InputLabel color={labelColor} htmlFor={restProps.id}>
-          {label}
-        </InputLabel>
-      )}
-      <BlankTextInput
-        underline={noBorder}
-        disabled={disabled}
-        error={error}
-        {...restProps}
-      />
+    <Wrapper m={1}>
+      <Card
+        py={2}
+        px={2}
+        borderColor={borderColor}
+        border={(!noBorder && "2px solid") || ""}
+        borderRadius={3}
+      >
+        {label && (
+          <InputLabel color={labelColor} htmlFor={restProps.id}>
+            {label}
+          </InputLabel>
+        )}
+        <BlankTextInput
+          underline={noBorder}
+          disabled={disabled}
+          error={Boolean(error)}
+          type="text"
+          {...restProps}
+        />
+      </Card>
     </Wrapper>
   )
 }
 
-const Wrapper = styled(Card)`
+const Wrapper = styled(Box)`
   position: relative;
+  /* border: 1px solid green; */
 `
 
 const Label: React.FunctionComponent<TextProps> = ({
@@ -74,13 +78,13 @@ const Label: React.FunctionComponent<TextProps> = ({
 
 const InputLabel = styled(Label)`
   position: absolute;
-  top: -0.5rem;
+  top: -0.4rem;
   left: ${themeGet("space.1")}px;
 `
 
-const BlankTextInput = styled.input.attrs({ type: "text" })<{
+const BlankTextInput = styled.input<{
   underline?: boolean
-  error?: string
+  error: boolean
   disabled: boolean
 }>`
   border: none;
@@ -96,13 +100,13 @@ const BlankTextInput = styled.input.attrs({ type: "text" })<{
   width: 100%;
   font-size: 0.85rem;
   line-height: 1.8;
-  font-family: ${p => p.theme.fonts.sans};
-  padding-bottom: ${p => p.theme.space[1]};
+  font-family: ${themeGet("fonts.sans")};
+  padding-bottom: ${themeGet("space.1")};
   ${space}
   &:focus {
     outline: none;
   }
   &::placeholder {
-    color: ${p => p.theme.colors["gray.6"]};
+    color: ${themeGet("colors.gray.6")};
   }
 `
