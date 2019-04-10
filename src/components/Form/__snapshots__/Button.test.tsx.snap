@@ -9,7 +9,7 @@ exports[`Button renders correctly 1`] = `
   padding-left: 16px;
   padding-right: 16px;
   font-size: inherit;
-  color: white;
+  color: #fff;
   background-color: blue;
   -webkit-appearance: none;
   -moz-appearance: none;
@@ -21,12 +21,14 @@ exports[`Button renders correctly 1`] = `
   text-decoration: none;
   font-weight: bold;
   border: 0;
-  border-radius: 3px;
-  border-radius: 3px;
+  border-radius: 5px;
+  border-radius: 5px;
+  color: #fff;
+  background-color: #db1d33;
 }
 
 <button
-  className="sc-bdVaJa c0"
+  className="c0"
   color="white"
   disabled={false}
   fontSize="inherit"

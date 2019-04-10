@@ -35,7 +35,7 @@ export const TextInput: React.FunctionComponent<TextInputProps> = ({
         py={2}
         px={2}
         borderColor={borderColor}
-        border={(!noBorder && "2px solid") || ""}
+        border={noBorder ? "" : "2px solid"}
         borderRadius={3}
       >
         {label && (
@@ -47,8 +47,7 @@ export const TextInput: React.FunctionComponent<TextInputProps> = ({
           underline={noBorder}
           disabled={disabled}
           error={Boolean(error)}
-          type="text"
-          {...restProps}
+          {...restProps as any}
         />
       </Card>
     </Wrapper>
@@ -82,11 +81,15 @@ const InputLabel = styled(Label)`
   left: ${themeGet("space.1")}px;
 `
 
-const BlankTextInput = styled.input<{
+interface InputElementProps extends React.HTMLProps<HTMLInputElement> {
   underline?: boolean
   error: boolean
   disabled: boolean
-}>`
+}
+
+const BlankTextInput = styled.input.attrs({
+  type: "text",
+})<InputElementProps>`
   border: none;
   ${({ theme, underline, error, disabled }) =>
     underline &&
