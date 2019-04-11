@@ -13,7 +13,7 @@
     "clean": "rm -rf ./dist",
     "build": "yarn run clean && yarn build:types && npm run build:js",
     "build:js": "babel src --out-dir dist --extensions \".ts,.tsx\" -s --source-maps inline",
-    "build:types": "tsc --declaration --emitDeclarationOnly --listEmittedFiles",
+    "build:types": "tsc --emitDeclarationOnly --listEmittedFiles",
     "build:watch": "concurrently --raw --kill-others 'yarn build:js -w' 'yarn build:types -w'",
     "test": "jest",
     "type-check": "tsc --noEmit",
