@@ -1,6 +1,12 @@
 import { Theme } from "styled-system"
 
-const colors = {
+interface Colors {
+  red: string
+  black: string
+  white: string
+  gray: { [k: string]: string }
+}
+const colors: Colors = {
   red: "#db1d33",
   black: "#000",
   white: "#fff",
@@ -55,7 +61,7 @@ export const defaultTheme: CommonsTheme = {
       boxShadow: "inset 0 0 0 2px",
     },
     inactive: {
-      backgroundColor: colors.gray[5],
+      backgroundColor: colors.gray["5"],
       color: colors.white,
       disabled: true,
     },
