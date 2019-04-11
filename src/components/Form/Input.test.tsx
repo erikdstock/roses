@@ -1,18 +1,18 @@
 import React from "react"
 import { render } from "../../util/testUtils"
-import { TextInput } from "./Input"
+import { Input } from "./Input"
 
-describe("Text TextInput", () => {
+describe("Text Input", () => {
   describe("Default", () => {
     it("renders correctly", () => {
       const tree = render(
-        <TextInput label="Name" placeholder="Hello" id="name" name="name" />
+        <Input label="Name" placeholder="Hello" id="name" name="name" />
       ).toJSON()
       expect(tree).toMatchSnapshot()
     })
     it("renders disabled state correctly", () => {
       const tree = render(
-        <TextInput
+        <Input
           disabled
           label="Name"
           placeholder="Hello"
@@ -24,7 +24,7 @@ describe("Text TextInput", () => {
     })
     it("renders error state correctly", () => {
       const tree = render(
-        <TextInput
+        <Input
           error="bad praxis"
           label="Name"
           placeholder="Hello"
@@ -38,7 +38,7 @@ describe("Text TextInput", () => {
   describe("No Border", () => {
     it("renders correctly", () => {
       const tree = render(
-        <TextInput
+        <Input
           noBorder
           label="Name"
           placeholder="Hello"
@@ -50,7 +50,7 @@ describe("Text TextInput", () => {
     })
     it("renders disabled state correctly", () => {
       const tree = render(
-        <TextInput
+        <Input
           disabled
           noBorder
           label="Name"
@@ -63,7 +63,7 @@ describe("Text TextInput", () => {
     })
     it("renders error state correctly", () => {
       const tree = render(
-        <TextInput
+        <Input
           error="bad praxis"
           noBorder
           label="Name"

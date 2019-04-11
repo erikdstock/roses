@@ -4,19 +4,13 @@ import { storiesOf, addDecorator } from "@storybook/react"
 import { action } from "@storybook/addon-actions"
 import { Flex, Box } from "rebass"
 
-import { TextInput } from "components/Form/Input"
+import { Input } from "components/Form/Input"
 
 storiesOf("Form/Input", module)
   .add("Text", () => (
     <Flex mt={2} flexDirection="column" width="500px">
-      <TextInput
-        noBorder
-        label="Name"
-        placeholder="Hello"
-        id="name"
-        name="name"
-      />
-      <TextInput
+      <Input noBorder label="Name" placeholder="Hello" id="name" name="name" />
+      <Input
         noBorder
         type="password"
         label="Password (With Error)"
@@ -25,7 +19,7 @@ storiesOf("Form/Input", module)
         id="email"
         name="email"
       />
-      <TextInput
+      <Input
         noBorder
         id="tnd"
         name="tendency"
@@ -37,15 +31,15 @@ storiesOf("Form/Input", module)
   ))
   .add("Bordered Text", () => (
     <Flex mt={2} flexDirection="column" width="500px">
-      <TextInput label="Name" placeholder="Hello" id="name" name="name" />
-      <TextInput
+      <Input label="Name" placeholder="Hello" id="name" name="name" />
+      <Input
         label="Email"
         error="Profit is Theft"
         placeholder="Error"
         id="email"
         name="email"
       />
-      <TextInput
+      <Input
         id="pwd"
         name="password"
         label="Password"
@@ -56,6 +50,6 @@ storiesOf("Form/Input", module)
   ))
   .add("Bordered Text - Unlabeled", () => (
     <Flex mt={2} width="500px">
-      <TextInput type="password" placeholder="Enter Slogan" />
+      <Input type="password" placeholder="Enter Slogan" />
     </Flex>
   ))

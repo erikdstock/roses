@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Text TextInput Default renders correctly 1`] = `
+exports[`Text Input Default renders correctly 1`] = `
 .c3 {
   box-sizing: border-box;
   padding-left: 4px;
@@ -90,7 +90,7 @@ exports[`Text TextInput Default renders correctly 1`] = `
 </div>
 `;
 
-exports[`Text TextInput Default renders disabled state correctly 1`] = `
+exports[`Text Input Default renders disabled state correctly 1`] = `
 .c3 {
   box-sizing: border-box;
   padding-left: 4px;
@@ -182,7 +182,7 @@ exports[`Text TextInput Default renders disabled state correctly 1`] = `
 </div>
 `;
 
-exports[`Text TextInput Default renders error state correctly 1`] = `
+exports[`Text Input Default renders error state correctly 1`] = `
 .c3 {
   box-sizing: border-box;
   padding-left: 4px;
@@ -274,7 +274,7 @@ exports[`Text TextInput Default renders error state correctly 1`] = `
 </div>
 `;
 
-exports[`Text TextInput No Border renders correctly 1`] = `
+exports[`Text Input No Border renders correctly 1`] = `
 .c3 {
   box-sizing: border-box;
   padding-left: 4px;
@@ -364,7 +364,7 @@ exports[`Text TextInput No Border renders correctly 1`] = `
 </div>
 `;
 
-exports[`Text TextInput No Border renders disabled state correctly 1`] = `
+exports[`Text Input No Border renders disabled state correctly 1`] = `
 .c3 {
   box-sizing: border-box;
   padding-left: 4px;
@@ -456,7 +456,7 @@ exports[`Text TextInput No Border renders disabled state correctly 1`] = `
 </div>
 `;
 
-exports[`Text TextInput No Border renders error state correctly 1`] = `
+exports[`Text Input No Border renders error state correctly 1`] = `
 .c3 {
   box-sizing: border-box;
   padding-left: 4px;

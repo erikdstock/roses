@@ -4,16 +4,28 @@ import styled from "styled-components"
 import { space, themeGet } from "styled-system"
 
 interface TextInputProps extends React.HTMLProps<HTMLInputElement> {
+  /* The border color, assuming no error */
   borderColor?: string
+  /* An error message string - presence indicates error */
   error?: string
+  /* The id for the input (will also be used as input name) */
   id: string
+  /* Render the borderless version of the input */
   noBorder?: boolean
 }
 
+// TODO: Should we have standard 'disabled' and 'error' colors that don't depend on a specific theme color name?
 const errorColor = "red"
 const disabledColor = "gray.3"
 
-export const TextInput: React.FunctionComponent<TextInputProps> = ({
+/**
+ * A standard text input (or override with type="password, email, etc")
+ * Custom props include:
+ * noBorder: Render on a line instead of inside a border
+ * borderColor: Border color (excluding disabled & error states)
+ * label: text for `<label>` tag above input
+ */
+export const Input: React.FunctionComponent<TextInputProps> = ({
   borderColor = "black",
   disabled = false,
   error = null,
