@@ -124,5 +124,8 @@
       "<rootDir>/www/"
     ]
   },
-  "dependencies": {}
+  "dependencies": {
+    "babel-plugin-emotion": "^10.0.14",
+    "emotion-theming": "^10.0.14"
+  }
 }

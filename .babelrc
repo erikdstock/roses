@@ -11,16 +11,34 @@
       }
     ]
   ],
-  "plugins": [
-    "babel-plugin-add-react-displayname",
-    "babel-plugin-styled-components",
-    "@babel/plugin-proposal-class-properties",
-    [
-      "module-resolver",
-      {
-        "extensions": [".ts", ".tsx"],
-        "root": ["./src"]
-      }
-    ]
-  ]
+  "env": {
+    "production": {
+      "plugins": [
+        "emotion",
+        "babel-plugin-add-react-displayname",
+        "@babel/plugin-proposal-class-properties",
+        [
+          "module-resolver",
+          {
+            "extensions": [".ts", ".tsx"],
+            "root": ["./src"]
+          }
+        ]
+      ]
+    },
+    "development": {
+      "plugins": [
+        ["emotion", { "sourceMap": true }],
+        "babel-plugin-add-react-displayname",
+        "@babel/plugin-proposal-class-properties",
+        [
+          "module-resolver",
+          {
+            "extensions": [".ts", ".tsx"],
+            "root": ["./src"]
+          }
+        ]
+      ]
+    }
+  }
 }
