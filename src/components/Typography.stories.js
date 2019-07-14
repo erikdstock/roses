@@ -3,7 +3,7 @@ import React from "react"
 import { storiesOf, addDecorator } from "@storybook/react"
 import { action } from "@storybook/addon-actions"
 import { Text, H1, H2, H3, H4 } from "./Typography"
-import { Box, Flex } from "rebass"
+import { Box, Flex } from "./Layout"
 
 storiesOf("Typography", module)
   .add("Headings", () => (

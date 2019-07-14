@@ -1,3 +1,5 @@
+import { baseTheme } from "./baseTheme";
+
 const colors: RosesTheme["colors"] = {
   red: "#db1d33",
   black: "#000",
@@ -13,23 +15,12 @@ const colors: RosesTheme["colors"] = {
   },
 }
 
-// Default Breakpoints
-const breakpoints = ["40em", "52em", "64em"]
 
-// default fontSizes
-const fontSizes = [12, 14, 16, 20, 24, 32, 48, 64, 72]
-
-// default space for margin and padding
-const space = [0, 4, 8, 16, 32, 64, 128, 256, 512]
-
-// type NestedObjectOrArray<T> = T[] | { [K: string]: T | NestedObjectOrArray<T> }
 
 
 export const defaultTheme: RosesTheme = {
-  breakpoints,
+  ...baseTheme,
   colors,
-  fontSizes,
-  space,
 
   fonts: {
     serif: "'IBM Plex Serif', serif",

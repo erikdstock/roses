@@ -1,5 +1,5 @@
+import { ThemeProvider } from "emotion-theming"
 import React from "react"
-import { ThemeProvider } from "styled-components"
 // import { defaultTheme, RebassTheme } from "./theme";
 import { defaultTheme } from "./theme"
 
