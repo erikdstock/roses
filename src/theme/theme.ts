@@ -1,12 +1,4 @@
-import { Theme } from "styled-system"
-
-interface Colors {
-  red: string
-  black: string
-  white: string
-  gray: { [k: string]: string }
-}
-const colors: Colors = {
+const colors: RosesTheme["colors"] = {
   red: "#db1d33",
   black: "#000",
   white: "#fff",
@@ -32,12 +24,8 @@ const space = [0, 4, 8, 16, 32, 64, 128, 256, 512]
 
 // type NestedObjectOrArray<T> = T[] | { [K: string]: T | NestedObjectOrArray<T> }
 
-interface CommonsTheme extends Theme {
-  // colors: NestedObjectOrArray<CSS.ColorProperty>
-  colors: any
-}
 
-export const defaultTheme: CommonsTheme = {
+export const defaultTheme: RosesTheme = {
   breakpoints,
   colors,
   fontSizes,

@@ -1,7 +1,10 @@
+// import { Box, Card, Text, TextProps } from "rebass"
+import styled from "@emotion/styled"
+import themeGet from "@styled-system/theme-get"
 import React from "react"
-import { Box, Card, Text, TextProps } from "rebass"
-import styled from "styled-components"
-import { space, themeGet } from "styled-system"
+import { space } from "styled-system"
+import { Card } from "../Card"
+import { Box } from "../Layout"
 
 interface TextInputProps extends React.HTMLProps<HTMLInputElement> {
   /* The border color, assuming no error */
@@ -59,7 +62,7 @@ export const Input: React.FunctionComponent<TextInputProps> = ({
           underline={noBorder}
           disabled={disabled}
           error={Boolean(error)}
-          {...restProps as any}
+          {...(restProps as any)}
         />
       </Card>
     </Wrapper>

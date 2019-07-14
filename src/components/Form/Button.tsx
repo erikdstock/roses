@@ -1,11 +1,13 @@
-import styled from '@emotion/styled'
+import { CSSObject } from "@emotion/core"
+import styled from "@emotion/styled"
 import { css as ssCss } from "@styled-system/css"
-import themeGet from '@styled-system/theme-get'
+import themeGet from "@styled-system/theme-get"
 import React from "react"
-import { BoxProps } from "../layout"
+import * as SS from "styled-system"
+import { BoxKnownProps } from "../Layout"
+// import {} from @emotion/core
 
-
-const resetButtonStyle = css({
+const resetButtonStyle: CSSObject = {
   background: "none",
   color: "inherit",
   border: "none",
@@ -13,9 +15,20 @@ const resetButtonStyle = css({
   font: "inherit",
   cursor: "pointer",
   outline: "inherit",
-})
+}
 
-interface ButtonProps extends BoxProps with  {}
+interface ButtonKnownProps
+  extends BoxKnownProps,
+    SS.FontWeightProps,
+    SS.BorderProps,
+    SS.BordersProps,
+    SS.BorderColorProps,
+    SS.BorderRadiusProps,
+    SS.ButtonStyleProps {}
+
+interface ButtonProps
+  extends ButtonKnownProps,
+    Omit<React.HTMLProps<HTMLButtonElement>, keyof ButtonKnownProps> {}
 
 // TODO: make disabled button states automatic, rather than variants??
 // - could use alpha channel on a button variant's background color
@@ -23,6 +36,15 @@ interface ButtonProps extends BoxProps with  {}
 // <Button variant="primary" disabled ...
 //    ... => <BaseButton variant={disabled ? "disabled" : variant} ...
 //  - This would add requirements to users on their themes though.
-export const Button: React.FunctionComponent<ButtonProps> = styled('button')(resetButtonStyle, ssCss({
-  bg: themeGet('buttons.primary.bg')
-})
+export const Button: React.FunctionComponent<ButtonProps> = styled("button")(
+  resetButtonStyle,
+  SS.fontWeight,
+  SS.border,
+  SS.borders,
+  SS.borderColor,
+  SS.borderRadius,
+  SS.buttonStyle,
+  ssCss({
+    bg: themeGet("buttons.primary.bg"),
+  })
+)

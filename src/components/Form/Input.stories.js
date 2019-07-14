@@ -2,7 +2,7 @@ import React from "react"
 
 import { storiesOf, addDecorator } from "@storybook/react"
 import { action } from "@storybook/addon-actions"
-import { Flex, Box } from "rebass"
+import { Flex, Box } from "../Layout"
 
 import { Input } from "components/Form/Input"
 

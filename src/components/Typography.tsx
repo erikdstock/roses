@@ -1,5 +1,25 @@
+import styled from "@emotion/styled-base"
 import React from "react"
-import { Heading as BaseHeading, Text as BaseText, TextProps } from "rebass"
+import * as SS from "styled-system"
+
+interface TextKnownProps
+  extends BoxKnownProps,
+    SS.FontFamilyProps,
+    SS.FontWeightProps,
+    SS.TextAlignProps,
+    SS.LineHeightProps,
+    SS.LetterSpacingProps {}
+export interface TextProps
+  extends TextKnownProps,
+    Omit<React.HTMLProps<HTMLDivElement>, keyof TextKnownProps> {}
+
+export const Text: RosesSC<TextProps> = styled("p")(
+  SS.fontFamily,
+  SS.fontSize,
+  SS.textAlign,
+  SS.lineHeight,
+  SS.letterSpacing
+)
 
 /* Alternative way to provide default styles to rebass components:
  * I feel like this can be better solved if there is ever a typescript design lib (keeping props interfaces etc)
@@ -7,17 +27,17 @@ import { Heading as BaseHeading, Text as BaseText, TextProps } from "rebass"
  * Text.defaultProps = { m: "0 0 1em 0", ... }
  */
 
-export const Text: React.FunctionComponent<TextProps> = props => (
-  <BaseText
-    color="gray.1"
-    fontFamily="serif"
-    fontWeight={400}
-    fontSize={2}
-    lineHeight={1.4}
-    mb={4}
-    {...props}
-  />
-)
+// export const Text: React.FunctionComponent<TextProps> = props => (
+//   <BaseText
+//     color="gray.1"
+//     fontFamily="serif"
+//     fontWeight={400}
+//     fontSize={2}
+//     lineHeight={1.4}
+//     mb={4}
+//     {...props}
+//   />
+// )
 
 export const Heading: React.FunctionComponent<TextProps> = props => (
   <BaseHeading
