@@ -23,5 +23,6 @@ export const Box: RosesSC<BoxProps> = styled("div")(
 interface FlexKnownProps extends BoxKnownProps, SS.FlexboxProps {}
 export type FlexProps = StyledDivProps<FlexKnownProps>
 
-export const Flex: RosesSC<FlexProps> = styled(Box)(SS.flexbox)
-
+export const Flex: RosesSC<FlexProps> = styled(Box)(SS.flexbox, {
+  display: "flex",
+})

@@ -1,6 +1,7 @@
-import { baseTheme } from "./baseTheme";
+import { baseTheme } from "./baseTheme"
 
 const colors: RosesTheme["colors"] = {
+  ...baseTheme.colors,
   red: "#db1d33",
   black: "#000",
   white: "#fff",
@@ -15,14 +16,13 @@ const colors: RosesTheme["colors"] = {
   },
 }
 
-
-
-
 export const defaultTheme: RosesTheme = {
   ...baseTheme,
   colors,
 
+  // TODO: Extract, merge base theme & specify preferred keys (sans, serif, mono, heading, body?)
   fonts: {
+    ...baseTheme.fonts,
     serif: "'IBM Plex Serif', serif",
     sans: "Chivo, Helvetica, Sans",
     mono: "'Fira Mono', monospace",

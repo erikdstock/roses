@@ -5,7 +5,11 @@ import { RosesTheme } from "theme"
 // automatically import all files ending in *.stories.js
 const req = require.context("../src", true, /\.stories\.js$/)
 function loadStories() {
-  req.keys().forEach(filename => req(filename))
+  req.keys().forEach(filename => {
+    console.log("loading stories from " + filename)
+    //
+    req(filename)
+  })
 }
 
 addDecorator(storyFn => <RosesTheme>{storyFn()}</RosesTheme>)

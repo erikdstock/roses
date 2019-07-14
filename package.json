@@ -67,6 +67,7 @@
     "jest": "^24.6.0",
     "jest-emotion": "^10.0.14",
     "lint-staged": "^8.1.5",
+    "lodash": "^4.17.14",
     "prettier": "^1.16.4",
     "react": "^16.7.0",
     "react-docgen-typescript": "^1.12.3",

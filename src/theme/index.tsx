@@ -14,12 +14,5 @@ interface Props {
  * A theme provider
  */
 export const RosesTheme: React.FunctionComponent<Props> = ({ children }) => (
-  <ThemeProvider theme={defaultTheme}>
-    <>
-      {
-        /* ThemeProvider Children must be a node, so Fragment </> is required */
-        children
-      }
-    </>
-  </ThemeProvider>
+  <ThemeProvider theme={defaultTheme}>{children}</ThemeProvider>
 )

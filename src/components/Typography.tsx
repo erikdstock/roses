@@ -1,8 +1,8 @@
 import styled from "@emotion/styled-base"
+import styledCSS from "@styled-system/css"
 import React from "react"
 import * as SS from "styled-system"
-import themeGet from '@styled-system/theme-get'
-import { Box } from "./Layout";
+import { Box } from "./Layout"
 
 interface TextKnownProps
   extends BoxKnownProps,
@@ -15,12 +15,30 @@ export interface TextProps
   extends TextKnownProps,
     Omit<React.HTMLProps<HTMLDivElement>, keyof TextKnownProps> {}
 
-export const Text: RosesSC<TextProps> = styled(Box)(
+const styledTextProps = [
   SS.fontFamily,
   SS.fontSize,
   SS.textAlign,
   SS.lineHeight,
   SS.letterSpacing,
+]
+
+export const Text: RosesSC<TextProps> = styled(Box)(
+  styledCSS({
+    lineHeight: "body",
+  }),
+  ...styledTextProps
+)
+
+export const Heading: RosesSC<TextProps> = styled(Box)(
+  styledCSS({
+    lineHeight: "heading",
+    fontWeight: "heading",
+    fontFamily: "heading",
+    fontSize: 5,
+    marginY: ".67em",
+  }),
+  ...styledTextProps
 )
 
 
