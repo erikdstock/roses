@@ -22,7 +22,7 @@ const allColors = _.compact(
       const value = colors[key]
       if (typeof value === "string") return key
       if (typeof value === "object")
-      // Not handling nested color objects more than one level deep - ie 'red.1'
+        // Not handling nested color objects more than one level deep - ie 'red.1'
         return Object.keys(value).map(innerKey =>
           value[innerKey] ? `${key}.${innerKey}` : null
         )
@@ -30,13 +30,20 @@ const allColors = _.compact(
   )
 )
 
-
-storiesOf("Color", module)
+storiesOf("Theme", module)
   .addDecorator(storyFn => (
     <Flex flexDirection="row" flexWrap="wrap" p={3}>
       {storyFn()}
     </Flex>
   ))
+  .add("Theme Object", () => {
+    console.log(JSON.stringify(defaultTheme, null, 2))
+    return (
+      <Text fontFamily="monospace">
+        {JSON.stringify(defaultTheme, null, 2)}
+      </Text>
+    )
+  })
   .add("Colors", () => {
     return (
       <>

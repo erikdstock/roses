@@ -6,9 +6,9 @@ type StyledDivProps<T> = T & Omit<React.HTMLProps<HTMLDivElement>, keyof T>
 
 export interface BoxProps extends StyledDivProps<BoxKnownProps> {}
 
-export const Box: RosesSC<BoxProps> = styled("div")(
+export const boxStyles = [
   {
-    boxSizing: "border-box",
+    boxSizing: "border-box" as any,
   },
   SS.space,
   SS.layout,
@@ -17,8 +17,10 @@ export const Box: RosesSC<BoxProps> = styled("div")(
   SS.fontWeight,
   SS.order,
   SS.alignSelf,
-  SS.justifySelf
-)
+  SS.justifySelf,
+]
+
+export const Box: RosesSC<BoxProps> = styled("div")(...boxStyles)
 
 interface FlexKnownProps extends BoxKnownProps, SS.FlexboxProps {}
 export type FlexProps = StyledDivProps<FlexKnownProps>

@@ -1,13 +1,13 @@
 import { ThemeProvider } from "emotion-theming"
 import React from "react"
 // import { defaultTheme, RebassTheme } from "./theme";
-import { defaultTheme } from "./theme"
+import { defaultTheme } from "./defaultTheme"
 
 export { defaultTheme }
 
 interface Props {
   // theme?: RebassTheme;
-  theme?: object
+  theme?: RosesThemeObject
 }
 
 /**

@@ -1,27 +1,27 @@
-/** Base theme taken from theme-ui.com/demo Roboto Theme */
-export const baseTheme: RosesTheme  = {
+/** Base theme taken from theme-ui.com/demo base Theme */
+export const baseTheme: RosesThemeObject = {
   space: [0, 4, 8, 16, 32, 64, 128, 256, 512],
   fonts: {
-    body: "Roboto, system-ui, sans-serif",
-    heading: "Roboto, system-ui, sans-serif",
-    monospace: '"Roboto Mono", monospace',
+    body: "system-ui, sans-serif",
+    heading: "system-ui, sans-serif ",
+    monospace: "Menlo, monospace",
   },
   fontSizes: [12, 14, 16, 20, 24, 32, 48, 64, 96],
   fontWeights: {
     body: 400,
-    heading: 600,
-    bold: 600,
+    heading: 700,
+    bold: 700,
   },
   lineHeights: {
     body: 1.5,
     heading: 1.125,
   },
   colors: {
-    text: "#202124",
+    text: "#000",
     background: "#fff",
-    primary: "#1a73e8",
-    secondary: "#9c27b0",
-    muted: "#f1f3f4",
+    primary: "#07c",
+    secondary: "#30c",
+    muted: "#f6f6f6",
   },
   styles: {
     root: {
@@ -83,10 +83,9 @@ export const baseTheme: RosesTheme  = {
     pre: {
       fontFamily: "monospace",
       overflowX: "auto",
-
-      // code: {
-      //   color: "inherit",
-      // },
+      // "code": {
+      //   "color": "inherit"
+      // }
     },
     code: {
       fontFamily: "monospace",

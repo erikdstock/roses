@@ -5,6 +5,7 @@ import React from "react"
 import { space } from "styled-system"
 import { Card } from "../Card"
 import { Box } from "../Layout"
+import { Text, TextProps } from "../Typography"
 
 interface TextInputProps extends React.HTMLProps<HTMLInputElement> {
   /* The border color, assuming no error */
@@ -58,7 +59,8 @@ export const Input: React.FunctionComponent<TextInputProps> = ({
             {label}
           </InputLabel>
         )}
-        <BlankTextInput
+        <RawInput
+          type="text"
           underline={noBorder}
           disabled={disabled}
           error={Boolean(error)}
@@ -97,16 +99,14 @@ const InputLabel = styled(Label)`
 `
 
 interface InputElementProps extends React.HTMLProps<HTMLInputElement> {
-  underline?: boolean
+  underline: boolean
   error: boolean
   disabled: boolean
 }
 
-const BlankTextInput = styled.input.attrs({
-  type: "text",
-})<InputElementProps>`
+const RawInput = styled("input")<InputElementProps>`
   border: none;
-  ${({ theme, underline, error, disabled }) =>
+  ${({ theme, underline = false, error, disabled }) =>
     underline &&
     `border-bottom: solid 1px ${
       error

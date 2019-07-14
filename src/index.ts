@@ -1,5 +1,5 @@
-export * from "./Theme"
+export * from "./theme"
 export * from "./components/Form"
 export * from "./responsive/media"
 export * from "./components/Typography"
-export * from './components/Layout'
+export * from "./components/Layout"

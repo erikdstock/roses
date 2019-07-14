@@ -2,7 +2,7 @@ import styled from "@emotion/styled-base"
 import styledCSS from "@styled-system/css"
 import React from "react"
 import * as SS from "styled-system"
-import { Box } from "./Layout"
+import { Box, boxStyles } from "./Layout"
 
 interface TextKnownProps
   extends BoxKnownProps,
@@ -16,6 +16,7 @@ export interface TextProps
     Omit<React.HTMLProps<HTMLDivElement>, keyof TextKnownProps> {}
 
 const styledTextProps = [
+  ...boxStyles,
   SS.fontFamily,
   SS.fontSize,
   SS.textAlign,
@@ -23,24 +24,34 @@ const styledTextProps = [
   SS.letterSpacing,
 ]
 
-export const Text: RosesSC<TextProps> = styled(Box)(
+export const Text: RosesSC<TextProps> = styled("div")(
   styledCSS({
     lineHeight: "body",
+    whiteSpace: "pre-wrap",
+    fontFamily: "body",
   }),
   ...styledTextProps
 )
 
-export const Heading: RosesSC<TextProps> = styled(Box)(
+export const Heading: RosesSC<TextProps> = styled("div")(
   styledCSS({
     lineHeight: "heading",
     fontWeight: "heading",
     fontFamily: "heading",
     fontSize: 5,
-    marginY: ".67em",
   }),
   ...styledTextProps
 )
-
+export const Example = () => (
+  <>
+    <Heading bg="primary" color="muted" mt={6} mb={1}>
+      Testing mt override
+    </Heading>
+    <Heading bg="primary" color="muted" mt={8}>
+      Testing mt override
+    </Heading>
+  </>
+)
 
 /* Alternative way to provide default styles to rebass components:
  * I feel like this can be better solved if there is ever a typescript design lib (keeping props interfaces etc)

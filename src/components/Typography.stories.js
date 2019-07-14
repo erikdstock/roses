@@ -2,7 +2,7 @@ import React from "react"
 
 import { storiesOf } from "@storybook/react"
 
-import { Text, Heading, H3 } from "./Typography"
+import { Text, Heading, Example } from "./Typography"
 import { Box } from "./Layout"
 
 storiesOf("Typography", module)
@@ -19,7 +19,7 @@ storiesOf("Typography", module)
     </Box>
   ))
   .add("Fonts", () => (
-    <Box my={5} mx="auto" width="600px">
+    <Box my={4} mx="auto" width="600px">
       <Heading fontSize={3} fontFamily="sans">
         Sans
       </Heading>
@@ -35,7 +35,7 @@ storiesOf("Typography", module)
         Laborum dignissimos et consequatur. Id et voluptatem enim qui voluptatem
         sint. Qui aut nam quisquam facilis illo corrupti nostrum.
       </Text>
-      <Heading fontSize={3} fontFamily="serif">
+      <Heading my={4} fontSize={3} fontFamily="serif">
         Serif
       </Heading>
       <Text fontFamily="serif">
@@ -52,9 +52,10 @@ storiesOf("Typography", module)
         error saepe. Vel reprehenderit eum voluptas sint dicta culpa qui quam
         rerum. Reiciendis facilis aliquid.
       </Text>
-      <Heading fontSize={3} fontFamily="mono">
+      <Heading mt={4} fontSize={3} fontFamily="monospace">
         Monospace
       </Heading>
-      <Text fontFamily="mono">Qui odio nulla.</Text>
+      <Text fontFamily="monospace">Qui odio nulla.</Text>
+      <Example />
     </Box>
   ))
