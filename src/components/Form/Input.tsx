@@ -116,6 +116,7 @@ const RawInput = styled("input")<InputElementProps>`
         : theme.colors["gray.3"] || "gray"
     }`};
   width: 100%;
+  background: ${themeGet("colors.background")};
   font-size: 0.85rem;
   line-height: 1.8;
   font-family: ${themeGet("fonts.sans")};
@@ -125,6 +126,6 @@ const RawInput = styled("input")<InputElementProps>`
     outline: none;
   }
   &::placeholder {
-    color: ${themeGet("colors.gray.6")};
+    color: ${themeGet(disabledColor)};
   }
 `

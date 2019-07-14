@@ -1,5 +1,16 @@
+import CSS from "csstype"
+import { Theme } from "styled-system"
 /** Base theme taken from theme-ui.com/demo base Theme */
-export const baseTheme: RosesThemeObject = {
+export const baseTheme: Theme & {
+  styles: RosesThemeObject["htmlStyles"]
+  colors: {
+    text: CSS.ColorProperty
+    background: CSS.ColorProperty
+    primary: CSS.ColorProperty
+    secondary: CSS.ColorProperty
+    muted: CSS.ColorProperty
+  }
+} = {
   space: [0, 4, 8, 16, 32, 64, 128, 256, 512],
   fonts: {
     body: "system-ui, sans-serif",
@@ -83,6 +94,7 @@ export const baseTheme: RosesThemeObject = {
     pre: {
       fontFamily: "monospace",
       overflowX: "auto",
+      // Doesn't play nice
       // "code": {
       //   "color": "inherit"
       // }

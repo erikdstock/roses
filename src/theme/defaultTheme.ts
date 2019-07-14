@@ -1,7 +1,13 @@
 import { baseTheme } from "./baseTheme"
 
+const { text, background, primary, secondary, muted } = baseTheme.colors
+
 const colors: RosesThemeObject["colors"] = {
-  ...baseTheme.colors,
+  text,
+  background,
+  primary,
+  secondary,
+  muted,
   red: "#db1d33",
   black: "#000",
   white: "#fff",
@@ -16,7 +22,6 @@ const colors: RosesThemeObject["colors"] = {
   },
 }
 
-// TODO: Specify preferred keys (sans, serif, monospace, heading, body?)
 const fonts: RosesThemeObject["fonts"] = {
   ...baseTheme.fonts,
   serif: "'Times New Roman', serif",
@@ -35,21 +40,20 @@ export const defaultTheme: RosesThemeObject = {
   htmlStyles: {
     ...baseTheme.styles,
   },
-  componentStyles: {
+  variants: {
     Button: {
       primary: {
-        color: colors.white,
-        backgroundColor: colors.red,
+        color: colors.background,
+        backgroundColor: colors.primary,
       },
       outline: {
-        color: colors.red,
-        backgroundColor: colors.white,
+        color: "colors.primary",
+        backgroundColor: "colors.background",
         boxShadow: "inset 0 0 0 2px",
       },
       inactive: {
-        backgroundColor: colors.gray["5"],
-        color: colors.white,
-        disabled: true,
+        backgroundColor: colors.muted,
+        color: "colors.gray.5",
       },
     },
   },

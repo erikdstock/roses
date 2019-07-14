@@ -3,7 +3,7 @@ import React from "react"
 import { storiesOf } from "@storybook/react"
 import { Box, Flex } from "../components/Layout"
 import { Text } from "../components/Typography"
-import { defaultTheme } from "./theme"
+import { defaultTheme } from "./defaultTheme"
 import _ from "lodash"
 
 const ColorBox = props => (
@@ -14,7 +14,7 @@ const ColorBox = props => (
 )
 
 const { colors } = defaultTheme
-console.warn(colors)
+
 const allColors = _.compact(
   _.flatten(
     Object.keys(colors).map(key => {

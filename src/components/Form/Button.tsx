@@ -4,7 +4,6 @@ import { css as ssCss } from "@styled-system/css"
 import themeGet from "@styled-system/theme-get"
 import React from "react"
 import * as SS from "styled-system"
-import { BoxKnownProps } from "../Layout"
 // import {} from @emotion/core
 
 const resetButtonStyle: CSSObject = {
