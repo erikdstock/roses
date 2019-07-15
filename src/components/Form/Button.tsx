@@ -17,7 +17,7 @@ const resetButtonStyle: CSSObject = {
 }
 
 interface ButtonKnownProps
-  extends BoxKnownProps,
+  extends RosesStyleProps,
     SS.FontWeightProps,
     SS.BorderProps,
     SS.BordersProps,

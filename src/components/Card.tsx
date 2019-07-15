@@ -1,35 +1,17 @@
 import styled from "@emotion/styled"
+import styledCss from "@styled-system/css"
 import React from "react"
-import * as SS from "styled-system"
+import { boxStyle as baseStyle, withStyleProps } from "../util/styleComposition"
 import { Box } from "./Layout"
 
-interface CardKnownProps
-  extends BoxKnownProps,
-    SS.BorderProps,
-    SS.BordersProps,
-    SS.BorderColorProps,
-    SS.BorderRadiusProps,
-    SS.BoxShadowProps,
-    SS.BackgroundImageProps,
-    SS.BackgroundSizeProps,
-    SS.BackgroundPositionProps,
-    SS.BackgroundRepeatProps,
-    SS.OpacityProps {
-  variant?: SS.ResponsiveValue<string>
-}
-export interface CardProps
-  extends CardKnownProps,
-    Omit<React.HTMLProps<HTMLDivElement>, keyof CardKnownProps> {}
-
-export const Card: RosesSC<CardProps> = styled(Box)(
-  SS.border,
-  SS.borders,
-  SS.borderColor,
-  SS.borderRadius,
-  SS.boxShadow,
-  SS.backgroundImage,
-  SS.backgroundSize,
-  SS.backgroundPosition,
-  SS.backgroundRepeat,
-  SS.opacity
+export const Card: RosesSC<RosesStyleProps> = withStyleProps(
+  styled("div")(
+    baseStyle,
+    styledCss({
+      p: 1,
+      borderRadius: 2,
+      boxShadow: "0 0 16px rgba(0, 0, 0, .25)",
+    })
+  ),
+  { variantBase: "variants.Card" }
 )

@@ -1,30 +1,17 @@
-import styled from "@emotion/styled"
+import styled, { Interpolation, StyledComponent } from "@emotion/styled"
+import styledCss from "@styled-system/css"
+import get from "lodash/get"
 import React from "react"
-import * as SS from "styled-system"
+import { boxStyle as baseStyle, withStyleProps } from "../util/styleComposition"
 
-type StyledDivProps<T> = T & Omit<React.HTMLProps<HTMLDivElement>, keyof T>
+// type StyledDivProps<T> = T & Omit<React.HTMLProps<HTMLDivElement>, keyof T>
 
-export interface BoxProps extends StyledDivProps<BoxKnownProps> {}
+// export interface BoxProps extends StyledDivProps<RosesStyleProps> {}
 
-export const boxStyles = [
-  {
-    boxSizing: "border-box" as any,
-  },
-  SS.space,
-  SS.layout,
-  SS.color,
-  SS.flex,
-  SS.fontWeight,
-  SS.order,
-  SS.alignSelf,
-  SS.justifySelf,
-]
+export const Box: RosesSC = withStyleProps(styled("div")(baseStyle))
 
-export const Box: RosesSC<BoxProps> = styled("div")(...boxStyles)
-
-interface FlexKnownProps extends BoxKnownProps, SS.FlexboxProps {}
-export type FlexProps = StyledDivProps<FlexKnownProps>
-
-export const Flex: RosesSC<FlexProps> = styled(Box)(SS.flexbox, {
-  display: "flex",
-})
+export const Flex: RosesSC = withStyleProps(
+  styled("div")(baseStyle, {
+    display: "flex",
+  })
+)

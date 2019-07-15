@@ -1,8 +1,9 @@
-// import { Box, Card, Text, TextProps } from "rebass"
+/** @jsx jsx */
+import { jsx } from "@emotion/core"
 import styled from "@emotion/styled"
+import { css as styledCss } from "@styled-system/css"
 import themeGet from "@styled-system/theme-get"
 import React from "react"
-import { space } from "styled-system"
 import { Card } from "../Card"
 import { Box } from "../Layout"
 import { Text, TextProps } from "../Typography"
@@ -46,13 +47,15 @@ export const Input: React.FunctionComponent<TextInputProps> = ({
     labelColor = disabledColor
   }
   return (
-    <Wrapper m={1}>
+    <Wrapper css={styledCss({ m: 2 })}>
       <Card
-        py={2}
-        px={2}
-        borderColor={borderColor}
-        border={noBorder ? "" : "2px solid"}
-        borderRadius={3}
+        css={styledCss({
+          py: 2,
+          px: 2,
+          borderColor,
+          border: noBorder ? "none" : "2px solid",
+          borderRadius: 3,
+        })}
       >
         {label && (
           <InputLabel color={labelColor} htmlFor={restProps.id}>
@@ -71,32 +74,23 @@ export const Input: React.FunctionComponent<TextInputProps> = ({
   )
 }
 
-const Wrapper = styled(Box)`
-  position: relative;
-  /* border: 1px solid green; */
-`
+const Wrapper = styled(Box)({ position: "relative" })
 
-const Label: React.FunctionComponent<TextProps> = ({
-  children,
-  ...restProps
-}) => (
-  <Text
-    as="label"
-    bg="white"
-    fontFamily="sans"
-    fontSize=".75rem"
-    px={1}
-    {...restProps}
-  >
+const labelStyles = styledCss({
+  bg: "white",
+  fontFamily: "sans",
+  fontSize: ".75rem",
+  px: 1,
+  position: "absolute",
+  top: "-0.4rem",
+  left: 1,
+})
+
+const InputLabel: React.FC<TextProps> = ({ children, ...restProps }) => (
+  <Text as="label" css={labelStyles} {...restProps}>
     {children}
   </Text>
 )
-
-const InputLabel = styled(Label)`
-  position: absolute;
-  top: -0.4rem;
-  left: ${themeGet("space.1")}px;
-`
 
 interface InputElementProps extends React.HTMLProps<HTMLInputElement> {
   underline: boolean
@@ -104,28 +98,33 @@ interface InputElementProps extends React.HTMLProps<HTMLInputElement> {
   disabled: boolean
 }
 
-const RawInput = styled("input")<InputElementProps>`
-  border: none;
-  ${({ theme, underline = false, error, disabled }) =>
-    underline &&
-    `border-bottom: solid 1px ${
-      error
+const RawInput = styled("input")<InputElementProps>(
+  styledCss({
+    border: "none",
+    width: "100%",
+    bg: "background",
+    fontSize: "0.85rem",
+    lineHeight: "1.8",
+    fontFamily: "sans",
+    pb: 1,
+    ":focus": {
+      outline: "none",
+    },
+    "::placeholder": {
+      color: disabledColor,
+    },
+  }),
+  ({ theme, underline = false, error, disabled }) => {
+    if (underline) {
+      const underlineColor = error
         ? theme.colors.red
         : disabled
-        ? theme.colors[disabledColor] || "lightGray"
-        : theme.colors["gray.3"] || "gray"
-    }`};
-  width: 100%;
-  background: ${themeGet("colors.background")};
-  font-size: 0.85rem;
-  line-height: 1.8;
-  font-family: ${themeGet("fonts.sans")};
-  padding-bottom: ${themeGet("space.1")};
-  ${space}
-  &:focus {
-    outline: none;
+        ? theme.colors[disabledColor]
+        : theme.colors["gray.3"]
+      return styledCss({
+        borderBottom: "solid 1px",
+        borderColor: underlineColor,
+      })
+    }
   }
-  &::placeholder {
-    color: ${themeGet(disabledColor)};
-  }
-`
+)

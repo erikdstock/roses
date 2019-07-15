@@ -32,19 +32,14 @@ declare global {
    * in the context of a RosesTheme,
    * with additional styled-system props
    */
-  type RosesSC<Inner, Style = any> = StyledComponent<
+  type RosesSC<Inner = RosesStyleProps, Style = any> = StyledComponent<
     Inner,
     Style,
     RosesThemeObject
   >
 
-  interface BoxKnownProps
-    extends SS.LayoutProps,
-      SS.SpaceProps,
-      SS.ColorProps,
-      SS.FontWeightProps,
-      SS.OrderProps,
-      SS.FlexProps,
-      SS.AlignSelfProps,
-      SS.JustifySelfProps {}
+  interface RosesStyleProps {
+    variant?: SS.ResponsiveValue<string>
+    rx?: SystemStyleObject
+  }
 }
