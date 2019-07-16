@@ -40,6 +40,7 @@ declare global {
 
   interface RosesStyleProps {
     variant?: SS.ResponsiveValue<string>
+    /** A SystemStyleObject - theme-aware css to be applied last (see @styled-system/css) */
     rx?: SystemStyleObject
   }
 }

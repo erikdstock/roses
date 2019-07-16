@@ -2,11 +2,10 @@
 import { jsx } from "@emotion/core"
 import styled from "@emotion/styled"
 import { css as styledCss } from "@styled-system/css"
-import themeGet from "@styled-system/theme-get"
 import React from "react"
 import { Card } from "../Card"
 import { Box } from "../Layout"
-import { Text, TextProps } from "../Typography"
+import { Text } from "../Typography"
 
 interface TextInputProps extends React.HTMLProps<HTMLInputElement> {
   /* The border color, assuming no error */
@@ -86,7 +85,7 @@ const labelStyles = styledCss({
   left: 1,
 })
 
-const InputLabel: React.FC<TextProps> = ({ children, ...restProps }) => (
+const InputLabel: React.FC<any> = ({ children, ...restProps }) => (
   <Text as="label" css={labelStyles} {...restProps}>
     {children}
   </Text>
