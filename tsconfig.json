@@ -1,5 +1,5 @@
 {
-  "include": ["**/*.ts", "**/*.tsx"],
+  "include": ["typings/*.d.ts", "**/*.ts", "**/*.tsx"],
   "exclude": ["node_modules/*", "dist/*"],
   "compilerOptions": {
     /* Basic Options */

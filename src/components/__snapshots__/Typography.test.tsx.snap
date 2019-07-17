@@ -1,0 +1,32 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Heading renders correctly 1`] = `
+.emotion-0 {
+  box-sizing: border-box;
+  line-height: 1.125;
+  font-weight: 700;
+  font-family: 'Arial',system-ui,sans-serif;
+  font-size: 32px;
+}
+
+<div
+  className="emotion-0"
+>
+  Click me
+</div>
+`;
+
+exports[`Text renders correctly 1`] = `
+.emotion-0 {
+  box-sizing: border-box;
+  line-height: 1.5;
+  white-space: pre-wrap;
+  font-family: 'Times New Roman',serif;
+}
+
+<div
+  className="emotion-0"
+>
+  Click me
+</div>
+`;

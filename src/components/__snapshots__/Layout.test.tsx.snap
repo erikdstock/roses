@@ -1,0 +1,29 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Box renders correctly 1`] = `
+.emotion-0 {
+  box-sizing: border-box;
+}
+
+<div
+  className="emotion-0"
+>
+  Click me
+</div>
+`;
+
+exports[`Flex renders correctly 1`] = `
+.emotion-0 {
+  box-sizing: border-box;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+<div
+  className="emotion-0"
+>
+  Click me
+</div>
+`;

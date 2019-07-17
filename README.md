@@ -12,7 +12,7 @@ _Typed react component library feat. rebass styled-system styled-components_
 
 Add the package and any missing peer dependencies:
 
-`yarn add roses # and # react rebass styled-components styled-system`
+`yarn add roses @styled-system/css @emotion/core
 
 ## Usage
 

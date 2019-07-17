@@ -1,85 +1,91 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Text Input Default renders correctly 1`] = `
-.c3 {
+.emotion-3 {
   box-sizing: border-box;
-  padding-left: 4px;
-  padding-right: 4px;
-  font-size: .75rem;
-  background-color: #fff;
-  font-family: Chivo,Helvetica,Sans;
+  position: relative;
+  margin: 8px;
 }
 
-.c1 {
+.emotion-2 {
   box-sizing: border-box;
+  padding: 4px;
+  border-radius: 3px;
+  box-shadow: 0 0 16px rgba(0,0,0,.25);
+  padding: 8px;
+  margin: 4px;
+  display: inline-block;
+  border-radius: 3px;
+  box-shadow: 0 0 16px rgba(0,0,0,.25);
+  box-shadow: none;
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 8px;
   padding-right: 8px;
+  border-color: #000;
   border: 2px solid;
-  border-color: #000;
-  border-radius: 5px;
-  border-color: #000;
   border-radius: 5px;
 }
 
-.c0 {
+.emotion-0 {
   box-sizing: border-box;
-  margin: 4px;
-  position: relative;
-}
-
-.c2 {
+  line-height: 1.5;
+  white-space: pre-wrap;
+  font-family: 'Times New Roman',serif;
+  background-color: #fff;
+  font-family: 'Arial',system-ui,sans-serif;
+  font-size: .75rem;
+  padding-left: 4px;
+  padding-right: 4px;
   position: absolute;
   top: -0.4rem;
   left: 4px;
 }
 
-.c4 {
+.emotion-1 {
   border: none;
   width: 100%;
+  background-color: #fff;
   font-size: 0.85rem;
   line-height: 1.8;
-  font-family: Chivo,Helvetica,Sans;
-  padding-bottom: 4;
+  font-family: 'Arial',system-ui,sans-serif;
+  padding-bottom: 4px;
 }
 
-.c4:focus {
+.emotion-1:focus {
   outline: none;
 }
 
-.c4::-webkit-input-placeholder {
-  color: hsl(0,0%,85%);
+.emotion-1::-webkit-input-placeholder {
+  color: hsl(0,0%,58%);
 }
 
-.c4::-moz-placeholder {
-  color: hsl(0,0%,85%);
+.emotion-1::-moz-placeholder {
+  color: hsl(0,0%,58%);
 }
 
-.c4:-ms-input-placeholder {
-  color: hsl(0,0%,85%);
+.emotion-1:-ms-input-placeholder {
+  color: hsl(0,0%,58%);
 }
 
-.c4::placeholder {
-  color: hsl(0,0%,85%);
+.emotion-1::placeholder {
+  color: hsl(0,0%,58%);
 }
 
 <div
-  className="c0"
+  className="emotion-3"
 >
   <div
-    className="c1"
+    className="emotion-2"
   >
     <label
-      className="c2 c3"
-      fontFamily="sans"
-      fontSize=".75rem"
+      className="emotion-0"
       htmlFor="name"
     >
       Name
     </label>
     <input
-      className="c4"
+      className="emotion-1"
       disabled={false}
       id="name"
       name="name"
@@ -91,87 +97,92 @@ exports[`Text Input Default renders correctly 1`] = `
 `;
 
 exports[`Text Input Default renders disabled state correctly 1`] = `
-.c3 {
+.emotion-3 {
   box-sizing: border-box;
+  position: relative;
+  margin: 8px;
+}
+
+.emotion-0 {
+  box-sizing: border-box;
+  line-height: 1.5;
+  white-space: pre-wrap;
+  font-family: 'Times New Roman',serif;
+  background-color: #fff;
+  font-family: 'Arial',system-ui,sans-serif;
+  font-size: .75rem;
   padding-left: 4px;
   padding-right: 4px;
-  font-size: .75rem;
-  color: hsl(0,0%,58%);
-  background-color: #fff;
-  font-family: Chivo,Helvetica,Sans;
-}
-
-.c1 {
-  box-sizing: border-box;
-  padding-top: 8px;
-  padding-bottom: 8px;
-  padding-left: 8px;
-  padding-right: 8px;
-  border: 2px solid;
-  border-color: hsl(0,0%,58%);
-  border-radius: 5px;
-  border-color: hsl(0,0%,58%);
-  border-radius: 5px;
-}
-
-.c0 {
-  box-sizing: border-box;
-  margin: 4px;
-  position: relative;
-}
-
-.c2 {
   position: absolute;
   top: -0.4rem;
   left: 4px;
 }
 
-.c4 {
+.emotion-1 {
   border: none;
   width: 100%;
+  background-color: #fff;
   font-size: 0.85rem;
   line-height: 1.8;
-  font-family: Chivo,Helvetica,Sans;
-  padding-bottom: 4;
+  font-family: 'Arial',system-ui,sans-serif;
+  padding-bottom: 4px;
 }
 
-.c4:focus {
+.emotion-1:focus {
   outline: none;
 }
 
-.c4::-webkit-input-placeholder {
-  color: hsl(0,0%,85%);
+.emotion-1::-webkit-input-placeholder {
+  color: hsl(0,0%,58%);
 }
 
-.c4::-moz-placeholder {
-  color: hsl(0,0%,85%);
+.emotion-1::-moz-placeholder {
+  color: hsl(0,0%,58%);
 }
 
-.c4:-ms-input-placeholder {
-  color: hsl(0,0%,85%);
+.emotion-1:-ms-input-placeholder {
+  color: hsl(0,0%,58%);
 }
 
-.c4::placeholder {
-  color: hsl(0,0%,85%);
+.emotion-1::placeholder {
+  color: hsl(0,0%,58%);
+}
+
+.emotion-2 {
+  box-sizing: border-box;
+  padding: 4px;
+  border-radius: 3px;
+  box-shadow: 0 0 16px rgba(0,0,0,.25);
+  padding: 8px;
+  margin: 4px;
+  display: inline-block;
+  border-radius: 3px;
+  box-shadow: 0 0 16px rgba(0,0,0,.25);
+  box-shadow: none;
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 8px;
+  padding-right: 8px;
+  border-color: hsl(0,0%,58%);
+  border: 2px solid;
+  border-radius: 5px;
 }
 
 <div
-  className="c0"
+  className="emotion-3"
 >
   <div
-    className="c1"
+    className="emotion-2"
   >
     <label
-      className="c2 c3"
+      className="emotion-0"
       color="gray.3"
-      fontFamily="sans"
-      fontSize=".75rem"
       htmlFor="name"
     >
       Name
     </label>
     <input
-      className="c4"
+      className="emotion-1"
       disabled={true}
       id="name"
       name="name"
@@ -183,87 +194,92 @@ exports[`Text Input Default renders disabled state correctly 1`] = `
 `;
 
 exports[`Text Input Default renders error state correctly 1`] = `
-.c3 {
+.emotion-3 {
   box-sizing: border-box;
+  position: relative;
+  margin: 8px;
+}
+
+.emotion-0 {
+  box-sizing: border-box;
+  line-height: 1.5;
+  white-space: pre-wrap;
+  font-family: 'Times New Roman',serif;
+  background-color: #fff;
+  font-family: 'Arial',system-ui,sans-serif;
+  font-size: .75rem;
   padding-left: 4px;
   padding-right: 4px;
-  font-size: .75rem;
-  color: #db1d33;
-  background-color: #fff;
-  font-family: Chivo,Helvetica,Sans;
-}
-
-.c1 {
-  box-sizing: border-box;
-  padding-top: 8px;
-  padding-bottom: 8px;
-  padding-left: 8px;
-  padding-right: 8px;
-  border: 2px solid;
-  border-color: #db1d33;
-  border-radius: 5px;
-  border-color: #db1d33;
-  border-radius: 5px;
-}
-
-.c0 {
-  box-sizing: border-box;
-  margin: 4px;
-  position: relative;
-}
-
-.c2 {
   position: absolute;
   top: -0.4rem;
   left: 4px;
 }
 
-.c4 {
+.emotion-1 {
   border: none;
   width: 100%;
+  background-color: #fff;
   font-size: 0.85rem;
   line-height: 1.8;
-  font-family: Chivo,Helvetica,Sans;
-  padding-bottom: 4;
+  font-family: 'Arial',system-ui,sans-serif;
+  padding-bottom: 4px;
 }
 
-.c4:focus {
+.emotion-1:focus {
   outline: none;
 }
 
-.c4::-webkit-input-placeholder {
-  color: hsl(0,0%,85%);
+.emotion-1::-webkit-input-placeholder {
+  color: hsl(0,0%,58%);
 }
 
-.c4::-moz-placeholder {
-  color: hsl(0,0%,85%);
+.emotion-1::-moz-placeholder {
+  color: hsl(0,0%,58%);
 }
 
-.c4:-ms-input-placeholder {
-  color: hsl(0,0%,85%);
+.emotion-1:-ms-input-placeholder {
+  color: hsl(0,0%,58%);
 }
 
-.c4::placeholder {
-  color: hsl(0,0%,85%);
+.emotion-1::placeholder {
+  color: hsl(0,0%,58%);
+}
+
+.emotion-2 {
+  box-sizing: border-box;
+  padding: 4px;
+  border-radius: 3px;
+  box-shadow: 0 0 16px rgba(0,0,0,.25);
+  padding: 8px;
+  margin: 4px;
+  display: inline-block;
+  border-radius: 3px;
+  box-shadow: 0 0 16px rgba(0,0,0,.25);
+  box-shadow: none;
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 8px;
+  padding-right: 8px;
+  border-color: #db1d33;
+  border: 2px solid;
+  border-radius: 5px;
 }
 
 <div
-  className="c0"
+  className="emotion-3"
 >
   <div
-    className="c1"
+    className="emotion-2"
   >
     <label
-      className="c2 c3"
+      className="emotion-0"
       color="red"
-      fontFamily="sans"
-      fontSize=".75rem"
       htmlFor="name"
     >
       Name
     </label>
     <input
-      className="c4"
+      className="emotion-1"
       disabled={false}
       id="name"
       name="name"
@@ -275,85 +291,92 @@ exports[`Text Input Default renders error state correctly 1`] = `
 `;
 
 exports[`Text Input No Border renders correctly 1`] = `
-.c3 {
+.emotion-3 {
   box-sizing: border-box;
+  position: relative;
+  margin: 8px;
+}
+
+.emotion-0 {
+  box-sizing: border-box;
+  line-height: 1.5;
+  white-space: pre-wrap;
+  font-family: 'Times New Roman',serif;
+  background-color: #fff;
+  font-family: 'Arial',system-ui,sans-serif;
+  font-size: .75rem;
   padding-left: 4px;
   padding-right: 4px;
-  font-size: .75rem;
-  background-color: #fff;
-  font-family: Chivo,Helvetica,Sans;
-}
-
-.c1 {
-  box-sizing: border-box;
-  padding-top: 8px;
-  padding-bottom: 8px;
-  padding-left: 8px;
-  padding-right: 8px;
-  border-color: #000;
-  border-radius: 5px;
-  border-color: #000;
-  border-radius: 5px;
-}
-
-.c0 {
-  box-sizing: border-box;
-  margin: 4px;
-  position: relative;
-}
-
-.c2 {
   position: absolute;
   top: -0.4rem;
   left: 4px;
 }
 
-.c4 {
+.emotion-2 {
+  box-sizing: border-box;
+  padding: 4px;
+  border-radius: 3px;
+  box-shadow: 0 0 16px rgba(0,0,0,.25);
+  padding: 8px;
+  margin: 4px;
+  display: inline-block;
+  border-radius: 3px;
+  box-shadow: 0 0 16px rgba(0,0,0,.25);
+  box-shadow: none;
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 8px;
+  padding-right: 8px;
+  border-color: #000;
   border: none;
-  border-bottom: solid 1px gray;
-  width: 100%;
-  font-size: 0.85rem;
-  line-height: 1.8;
-  font-family: Chivo,Helvetica,Sans;
-  padding-bottom: 4;
+  border-radius: 5px;
 }
 
-.c4:focus {
+.emotion-1 {
+  border: none;
+  width: 100%;
+  background-color: #fff;
+  font-size: 0.85rem;
+  line-height: 1.8;
+  font-family: 'Arial',system-ui,sans-serif;
+  padding-bottom: 4px;
+  border-bottom: solid 1px;
+}
+
+.emotion-1:focus {
   outline: none;
 }
 
-.c4::-webkit-input-placeholder {
-  color: hsl(0,0%,85%);
+.emotion-1::-webkit-input-placeholder {
+  color: hsl(0,0%,58%);
 }
 
-.c4::-moz-placeholder {
-  color: hsl(0,0%,85%);
+.emotion-1::-moz-placeholder {
+  color: hsl(0,0%,58%);
 }
 
-.c4:-ms-input-placeholder {
-  color: hsl(0,0%,85%);
+.emotion-1:-ms-input-placeholder {
+  color: hsl(0,0%,58%);
 }
 
-.c4::placeholder {
-  color: hsl(0,0%,85%);
+.emotion-1::placeholder {
+  color: hsl(0,0%,58%);
 }
 
 <div
-  className="c0"
+  className="emotion-3"
 >
   <div
-    className="c1"
+    className="emotion-2"
   >
     <label
-      className="c2 c3"
-      fontFamily="sans"
-      fontSize=".75rem"
+      className="emotion-0"
       htmlFor="name"
     >
       Name
     </label>
     <input
-      className="c4"
+      className="emotion-1"
       disabled={false}
       id="name"
       name="name"
@@ -365,87 +388,93 @@ exports[`Text Input No Border renders correctly 1`] = `
 `;
 
 exports[`Text Input No Border renders disabled state correctly 1`] = `
-.c3 {
+.emotion-3 {
   box-sizing: border-box;
+  position: relative;
+  margin: 8px;
+}
+
+.emotion-0 {
+  box-sizing: border-box;
+  line-height: 1.5;
+  white-space: pre-wrap;
+  font-family: 'Times New Roman',serif;
+  background-color: #fff;
+  font-family: 'Arial',system-ui,sans-serif;
+  font-size: .75rem;
   padding-left: 4px;
   padding-right: 4px;
-  font-size: .75rem;
-  color: hsl(0,0%,58%);
-  background-color: #fff;
-  font-family: Chivo,Helvetica,Sans;
-}
-
-.c1 {
-  box-sizing: border-box;
-  padding-top: 8px;
-  padding-bottom: 8px;
-  padding-left: 8px;
-  padding-right: 8px;
-  border-color: hsl(0,0%,58%);
-  border-radius: 5px;
-  border-color: hsl(0,0%,58%);
-  border-radius: 5px;
-}
-
-.c0 {
-  box-sizing: border-box;
-  margin: 4px;
-  position: relative;
-}
-
-.c2 {
   position: absolute;
   top: -0.4rem;
   left: 4px;
 }
 
-.c4 {
+.emotion-1 {
   border: none;
-  border-bottom: solid 1px lightGray;
   width: 100%;
+  background-color: #fff;
   font-size: 0.85rem;
   line-height: 1.8;
-  font-family: Chivo,Helvetica,Sans;
-  padding-bottom: 4;
+  font-family: 'Arial',system-ui,sans-serif;
+  padding-bottom: 4px;
+  border-bottom: solid 1px;
 }
 
-.c4:focus {
+.emotion-1:focus {
   outline: none;
 }
 
-.c4::-webkit-input-placeholder {
-  color: hsl(0,0%,85%);
+.emotion-1::-webkit-input-placeholder {
+  color: hsl(0,0%,58%);
 }
 
-.c4::-moz-placeholder {
-  color: hsl(0,0%,85%);
+.emotion-1::-moz-placeholder {
+  color: hsl(0,0%,58%);
 }
 
-.c4:-ms-input-placeholder {
-  color: hsl(0,0%,85%);
+.emotion-1:-ms-input-placeholder {
+  color: hsl(0,0%,58%);
 }
 
-.c4::placeholder {
-  color: hsl(0,0%,85%);
+.emotion-1::placeholder {
+  color: hsl(0,0%,58%);
+}
+
+.emotion-2 {
+  box-sizing: border-box;
+  padding: 4px;
+  border-radius: 3px;
+  box-shadow: 0 0 16px rgba(0,0,0,.25);
+  padding: 8px;
+  margin: 4px;
+  display: inline-block;
+  border-radius: 3px;
+  box-shadow: 0 0 16px rgba(0,0,0,.25);
+  box-shadow: none;
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 8px;
+  padding-right: 8px;
+  border-color: hsl(0,0%,58%);
+  border: none;
+  border-radius: 5px;
 }
 
 <div
-  className="c0"
+  className="emotion-3"
 >
   <div
-    className="c1"
+    className="emotion-2"
   >
     <label
-      className="c2 c3"
+      className="emotion-0"
       color="gray.3"
-      fontFamily="sans"
-      fontSize=".75rem"
       htmlFor="name"
     >
       Name
     </label>
     <input
-      className="c4"
+      className="emotion-1"
       disabled={true}
       id="name"
       name="name"
@@ -457,87 +486,94 @@ exports[`Text Input No Border renders disabled state correctly 1`] = `
 `;
 
 exports[`Text Input No Border renders error state correctly 1`] = `
-.c3 {
+.emotion-3 {
   box-sizing: border-box;
+  position: relative;
+  margin: 8px;
+}
+
+.emotion-0 {
+  box-sizing: border-box;
+  line-height: 1.5;
+  white-space: pre-wrap;
+  font-family: 'Times New Roman',serif;
+  background-color: #fff;
+  font-family: 'Arial',system-ui,sans-serif;
+  font-size: .75rem;
   padding-left: 4px;
   padding-right: 4px;
-  font-size: .75rem;
-  color: #db1d33;
-  background-color: #fff;
-  font-family: Chivo,Helvetica,Sans;
-}
-
-.c1 {
-  box-sizing: border-box;
-  padding-top: 8px;
-  padding-bottom: 8px;
-  padding-left: 8px;
-  padding-right: 8px;
-  border-color: #db1d33;
-  border-radius: 5px;
-  border-color: #db1d33;
-  border-radius: 5px;
-}
-
-.c0 {
-  box-sizing: border-box;
-  margin: 4px;
-  position: relative;
-}
-
-.c2 {
   position: absolute;
   top: -0.4rem;
   left: 4px;
 }
 
-.c4 {
+.emotion-2 {
+  box-sizing: border-box;
+  padding: 4px;
+  border-radius: 3px;
+  box-shadow: 0 0 16px rgba(0,0,0,.25);
+  padding: 8px;
+  margin: 4px;
+  display: inline-block;
+  border-radius: 3px;
+  box-shadow: 0 0 16px rgba(0,0,0,.25);
+  box-shadow: none;
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 8px;
+  padding-right: 8px;
+  border-color: #db1d33;
   border: none;
-  border-bottom: solid 1px #db1d33;
-  width: 100%;
-  font-size: 0.85rem;
-  line-height: 1.8;
-  font-family: Chivo,Helvetica,Sans;
-  padding-bottom: 4;
+  border-radius: 5px;
 }
 
-.c4:focus {
+.emotion-1 {
+  border: none;
+  width: 100%;
+  background-color: #fff;
+  font-size: 0.85rem;
+  line-height: 1.8;
+  font-family: 'Arial',system-ui,sans-serif;
+  padding-bottom: 4px;
+  border-bottom: solid 1px;
+  border-color: #db1d33;
+}
+
+.emotion-1:focus {
   outline: none;
 }
 
-.c4::-webkit-input-placeholder {
-  color: hsl(0,0%,85%);
+.emotion-1::-webkit-input-placeholder {
+  color: hsl(0,0%,58%);
 }
 
-.c4::-moz-placeholder {
-  color: hsl(0,0%,85%);
+.emotion-1::-moz-placeholder {
+  color: hsl(0,0%,58%);
 }
 
-.c4:-ms-input-placeholder {
-  color: hsl(0,0%,85%);
+.emotion-1:-ms-input-placeholder {
+  color: hsl(0,0%,58%);
 }
 
-.c4::placeholder {
-  color: hsl(0,0%,85%);
+.emotion-1::placeholder {
+  color: hsl(0,0%,58%);
 }
 
 <div
-  className="c0"
+  className="emotion-3"
 >
   <div
-    className="c1"
+    className="emotion-2"
   >
     <label
-      className="c2 c3"
+      className="emotion-0"
       color="red"
-      fontFamily="sans"
-      fontSize=".75rem"
       htmlFor="name"
     >
       Name
     </label>
     <input
-      className="c4"
+      className="emotion-1"
       disabled={false}
       id="name"
       name="name"

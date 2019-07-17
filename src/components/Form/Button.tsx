@@ -1,13 +1,6 @@
-import React from "react"
-import { Button as ReButton, ButtonProps } from "rebass"
+import styled from "@emotion/styled"
+import { withStyleProps } from "../../util/styleComposition"
 
-// TODO: make disabled button states automatic, rather than variants??
-// Could use rgb/alpha if we wanted...
-export const Button: React.FunctionComponent<ButtonProps> = props => (
-  <ReButton
-    variant="primary"
-    borderRadius={3}
-    disabled={props.disabled || props.variant === "disabled"}
-    {...props}
-  />
-)
+export const Button = withStyleProps("Button", styled("button")(), {
+  defaultVariant: "primary",
+})
