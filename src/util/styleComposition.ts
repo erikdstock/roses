@@ -24,27 +24,23 @@ interface StyledInterpolationProps extends RosesStyleProps {
   theme: RosesThemeObject
 }
 
-type InterpolationFn = (p: StyledInterpolationProps) => CSSObject | void
+type InterpolationFn = (p: StyledInterpolationProps) => CSSObject | undefined
 
-/** Reach into the theme, get a style object, apply it with styledCss */
-const themedComponent: (
-  path: string
-) => (p: StyledInterpolationProps) => CSSObject | undefined = (
-  path: string
-) => (props: StyledInterpolationProps) => {
-  const componentStyle = get(props.theme, `${componentStylesRoot}.${path}`)
+const themed: (path: string) => InterpolationFn = path => props => {
+  const componentStyle = get(props.theme, path)
   console.warn("CS: ", componentStyle)
   return componentStyle && styledCss(componentStyle)
 }
 
-const rxHandler: (p: StyledInterpolationProps) => CSSObject | undefined = ({
-  rx,
-}) => rx && styledCss(rx)
+/** Reach into the theme, get a style object, apply it with styledCss */
+const themedComponent: (
+  name: string
+) => (p: StyledInterpolationProps) => CSSObject | undefined = (path: string) =>
+  themed(`${componentStylesRoot}.${name}`)
 
-type VariantHandler = (
-  key: string,
-  op: ComposeOptions
-) => (p: RosesStyleProps & StyledInterpolationProps) => CSSObject | undefined
+const rxHandler: InterpolationFn = ({ rx }) => rx && styledCss(rx)
+
+type VariantHandler = (key: string, op: ComposeOptions) => InterpolationFn
 
 const variantHandler: VariantHandler = (componentKey, ops) => ({
   theme,
