@@ -38,8 +38,8 @@ exports[`Text Input Default renders correctly 1`] = `
   padding-left: 4px;
   padding-right: 4px;
   position: absolute;
-  top: -0.4rem;
-  left: 4px;
+  top: -.05rem;
+  left: -.05rem;
 }
 
 .emotion-1 {
@@ -114,8 +114,8 @@ exports[`Text Input Default renders disabled state correctly 1`] = `
   padding-left: 4px;
   padding-right: 4px;
   position: absolute;
-  top: -0.4rem;
-  left: 4px;
+  top: -.05rem;
+  left: -.05rem;
 }
 
 .emotion-1 {
@@ -211,8 +211,8 @@ exports[`Text Input Default renders error state correctly 1`] = `
   padding-left: 4px;
   padding-right: 4px;
   position: absolute;
-  top: -0.4rem;
-  left: 4px;
+  top: -.05rem;
+  left: -.05rem;
 }
 
 .emotion-1 {
@@ -308,8 +308,8 @@ exports[`Text Input No Border renders correctly 1`] = `
   padding-left: 4px;
   padding-right: 4px;
   position: absolute;
-  top: -0.4rem;
-  left: 4px;
+  top: -.05rem;
+  left: -.05rem;
 }
 
 .emotion-2 {
@@ -405,8 +405,8 @@ exports[`Text Input No Border renders disabled state correctly 1`] = `
   padding-left: 4px;
   padding-right: 4px;
   position: absolute;
-  top: -0.4rem;
-  left: 4px;
+  top: -.05rem;
+  left: -.05rem;
 }
 
 .emotion-1 {
@@ -503,8 +503,8 @@ exports[`Text Input No Border renders error state correctly 1`] = `
   padding-left: 4px;
   padding-right: 4px;
   position: absolute;
-  top: -0.4rem;
-  left: 4px;
+  top: -.05rem;
+  left: -.05rem;
 }
 
 .emotion-2 {

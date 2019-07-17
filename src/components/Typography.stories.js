@@ -1,15 +1,11 @@
 /** @jsx jsx */
 import { jsx } from "@emotion/core"
-// import React from 'react'
 
 import { storiesOf } from "@storybook/react"
 import { Text, Heading, Test } from "./Typography"
 import { Box } from "./Layout"
 
 storiesOf("Typography", module)
-  .add("test", () => {
-    return <Test rx={{ fontFamily: "heading", bg: "red" }}>Hi</Test>
-  })
   .add("Headings", () => (
     <Box>
       <Heading>Heading 1 (default: fontSize=5)</Heading>

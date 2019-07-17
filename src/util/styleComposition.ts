@@ -28,9 +28,7 @@ type InterpolationFn = (p: StyledInterpolationProps) => CSSObject | undefined
 
 /** Reach into the theme, get a style object, apply it with styledCss */
 const themed: (path: string) => InterpolationFn = path => props => {
-  console.warn(path, props.theme)
   const componentStyle = get(props.theme, path)
-  console.warn("Applying Style: ", componentStyle)
   return componentStyle && styledCss(componentStyle)
 }
 
@@ -39,7 +37,7 @@ const themedComponent: (
 ) => (p: StyledInterpolationProps) => CSSObject | undefined = (
   name: string
 ) => {
-  console.warn("wrapping component with " + name + " styles")
+  // console.log("wrapping component with " + name + " styles")
   return themed(`${componentStylesRoot}.${name}`)
 }
 
@@ -55,7 +53,7 @@ const variantHandler: VariantHandler = (componentKey, ops) => ({
   if (selectedVariant) {
     const base = `${themeVariantsRoot}.${componentKey}`
     const variantCss = get(theme, `${base}.${selectedVariant}`)
-    console.warn("variant: ", variantCss)
+    // console.log("variant: ", variantCss)
     return variantCss && styledCss(variantCss)
   }
 }

@@ -4,7 +4,8 @@ import { storiesOf } from "@storybook/react"
 import { Box, Flex } from "../components/Layout"
 import { Text } from "../components/Typography"
 import { defaultTheme } from "./defaultTheme"
-import _ from "lodash"
+import flatten from "lodash/flatten"
+import compact from "lodash/compact"
 
 const ColorBox = props => (
   <Box rx={{ m: 2, textAlign: "center" }}>
@@ -25,8 +26,8 @@ const ColorBox = props => (
 
 const { colors } = defaultTheme
 
-const allColors = _.compact(
-  _.flatten(
+const allColors = compact(
+  flatten(
     Object.keys(colors).map(key => {
       if (key === "modes") return null
       const value = colors[key]

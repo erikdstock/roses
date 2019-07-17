@@ -85,8 +85,8 @@ const labelStyles = styledCss({
   fontSize: ".75rem",
   px: 1,
   position: "absolute",
-  top: "-0.4rem",
-  left: 1,
+  top: "-.05rem",
+  left: "-.05rem",
 })
 
 const InputLabel: React.FC<any> = ({ children, ...restProps }) => (
