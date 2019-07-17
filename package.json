@@ -1,7 +1,7 @@
 {
   "name": "roses",
-  "version": "0.1.4",
-  "description": "React component library feat. rebass styled-system styled-components",
+  "version": "0.2.0",
+  "description": "React component library using emotion and @styled-system/css",
   "license": "MIT",
   "author": {
     "email": "erik.d.stock@gmail.com",
