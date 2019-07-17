@@ -5,6 +5,7 @@ import * as SS from "styled-system"
 import { boxStyle as baseStyle, withStyleProps } from "../util/styleComposition"
 
 export const Text: RosesSC = withStyleProps(
+  "Text",
   styled("div")(
     baseStyle,
     styledCSS({
@@ -16,6 +17,7 @@ export const Text: RosesSC = withStyleProps(
 )
 
 export const Heading: RosesSC = withStyleProps(
+  "Heading",
   styled("div")(
     baseStyle,
     styledCSS({
@@ -27,4 +29,4 @@ export const Heading: RosesSC = withStyleProps(
   )
 )
 
-export const Test = withStyleProps(styled("div")(baseStyle))
+export const Test = withStyleProps("Test", styled("div")(baseStyle))

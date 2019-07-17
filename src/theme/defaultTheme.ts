@@ -34,26 +34,39 @@ const fonts: RosesThemeObject["fonts"] = {
 export const defaultTheme: RosesThemeObject = {
   ...baseTheme,
   colors,
-
   fonts,
   radii: [0, 2, 3, 5, 10],
   htmlStyles: {
     ...baseTheme.styles,
   },
+  componentStyles: {
+    Button: {
+      background: "none",
+      fontFamily: "sans",
+      fontSize: 2,
+      color: "inherit",
+      border: "none",
+      p: 2,
+      m: 1,
+      cursor: "pointer",
+      outline: "inherit",
+      borderRadius: 3,
+      ":disabled": {
+        bg: "gray.5",
+        color: "muted",
+      },
+    },
+  },
   variants: {
     Button: {
       primary: {
-        color: colors.background,
-        backgroundColor: colors.primary,
+        color: "background",
+        bg: "primary",
       },
       outline: {
-        color: "colors.primary",
-        backgroundColor: "colors.background",
+        color: "primary",
+        bg: "background",
         boxShadow: "inset 0 0 0 2px",
-      },
-      inactive: {
-        backgroundColor: colors.muted,
-        color: "colors.gray.5",
       },
     },
   },

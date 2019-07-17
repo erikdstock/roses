@@ -11,12 +11,12 @@ storiesOf("Form/Button", module)
     <Button onClick={action("clicked")}>Hello Button</Button>
   ))
   .add("variants", () => (
-    <Flex width="500px" justifyContent="space-around">
+    <Flex justifyContent="space-around">
       <Button variant="outline" onClick={action("clicked")}>
         Outline
       </Button>
-      <Button variant="inactive" onClick={action("clicked")}>
-        Inactive
+      <Button disabled onClick={action("clicked")}>
+        Disabled
       </Button>
     </Flex>
   ))

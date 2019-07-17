@@ -3,6 +3,7 @@ import { jsx } from "@emotion/core"
 import styled from "@emotion/styled"
 import { css as styledCss } from "@styled-system/css"
 import React from "react"
+import { withStyleProps } from "../../util/styleComposition"
 import { Card } from "../Card"
 import { Box } from "../Layout"
 import { Text } from "../Typography"
@@ -22,6 +23,8 @@ interface TextInputProps extends React.HTMLProps<HTMLInputElement> {
 const errorColor = "red"
 const disabledColor = "gray.3"
 
+export const Input = withStyleProps("Input", _Input)
+
 /**
  * A standard text input (or override with type="password, email, etc")
  * Custom props include:
@@ -29,7 +32,7 @@ const disabledColor = "gray.3"
  * borderColor: Border color (excluding disabled & error states)
  * label: text for `<label>` tag above input
  */
-export const Input: React.FunctionComponent<TextInputProps> = ({
+const _Input: React.FunctionComponent<TextInputProps> = ({
   borderColor = "black",
   disabled = false,
   error = null,

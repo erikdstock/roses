@@ -18,10 +18,12 @@ declare global {
   /** The roses theme follows the styled-system/system-ui theme specification */
   type RosesThemeObject = SS.Theme & {
     colors: RosesThemeColors
-    /** Theme-ui html styles */
+    /** Theme-ui html styles (incoming from baseTheme) */
     styles?: { [elementName: string]: SystemStyleObject }
     /** Roses html styles */
     htmlStyles?: { [elementName: string]: SystemStyleObject }
+    /** Roses component styles */
+    componentStyles?: { [componentName: string]: SystemStyleObject }
     /** Custom component variant styles */
     variants?: {
       [componentName: string]: { [variant: string]: SystemStyleObject }
