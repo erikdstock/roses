@@ -41,9 +41,11 @@ export const defaultTheme: RosesThemeObject = {
   },
   componentStyles: {
     Button: {
+      display: "inline-block",
       background: "none",
       fontFamily: "sans",
       fontSize: 2,
+
       color: "inherit",
       border: "none",
       p: 2,
@@ -55,6 +57,13 @@ export const defaultTheme: RosesThemeObject = {
         bg: "gray.5",
         color: "muted",
       },
+    },
+    Card: {
+      p: 2,
+      m: 1,
+      display: "inline-block",
+      borderRadius: 2,
+      boxShadow: "0 0 16px rgba(0, 0, 0, .25)",
     },
   },
   variants: {

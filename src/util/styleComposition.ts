@@ -1,6 +1,6 @@
 import styled from "@emotion/styled"
-import { CSSObject, SystemStyleObject } from "@styled-system/css"
-import ssCss from "@styled-system/css"
+import ssCss, { CSSObject, SystemStyleObject } from "@styled-system/css"
+
 import get from "lodash/get"
 import { RosesTheme } from "../theme"
 
@@ -26,17 +26,22 @@ interface StyledInterpolationProps extends RosesStyleProps {
 
 type InterpolationFn = (p: StyledInterpolationProps) => CSSObject | undefined
 
+/** Reach into the theme, get a style object, apply it with styledCss */
 const themed: (path: string) => InterpolationFn = path => props => {
+  console.warn(path, props.theme)
   const componentStyle = get(props.theme, path)
-  console.warn("CS: ", componentStyle)
+  console.warn("Applying Style: ", componentStyle)
   return componentStyle && styledCss(componentStyle)
 }
 
-/** Reach into the theme, get a style object, apply it with styledCss */
 const themedComponent: (
   name: string
-) => (p: StyledInterpolationProps) => CSSObject | undefined = (path: string) =>
-  themed(`${componentStylesRoot}.${name}`)
+) => (p: StyledInterpolationProps) => CSSObject | undefined = (
+  name: string
+) => {
+  console.warn("wrapping component with " + name + " styles")
+  return themed(`${componentStylesRoot}.${name}`)
+}
 
 const rxHandler: InterpolationFn = ({ rx }) => rx && styledCss(rx)
 
@@ -65,10 +70,11 @@ const variantHandler: VariantHandler = (componentKey, ops) => ({
  *  const Widget = withStyleProps('Box', RawBox, {})
  * ```
  */
+// export const withStyleProps = <P extends RosesStyleProps>(
 export const withStyleProps = (
   componentKey: string,
   Component: React.ComponentType<RosesStyleProps>,
-  options: ComposeOptions = {} // not using this yet
+  options: ComposeOptions = {}
 ) => {
   return styled(Component)<RosesStyleProps>(
     themedComponent(componentKey),

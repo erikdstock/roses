@@ -8,13 +8,15 @@ import { Card } from "../Card"
 import { Box } from "../Layout"
 import { Text } from "../Typography"
 
-interface TextInputProps extends React.HTMLProps<HTMLInputElement> {
+interface TextInputProps
+  extends React.HTMLProps<HTMLInputElement>,
+    RosesStyleProps {
   /* The border color, assuming no error */
   borderColor?: string
   /* An error message string - presence indicates error */
   error?: string
   /* The id for the input (will also be used as input name) */
-  id: string
+  // id?: string
   /* Render the borderless version of the input */
   noBorder?: boolean
 }
@@ -22,8 +24,6 @@ interface TextInputProps extends React.HTMLProps<HTMLInputElement> {
 // TODO: Should we have standard 'disabled' and 'error' colors that don't depend on a specific theme color name?
 const errorColor = "red"
 const disabledColor = "gray.3"
-
-export const Input = withStyleProps("Input", _Input)
 
 /**
  * A standard text input (or override with type="password, email, etc")
@@ -52,6 +52,7 @@ const _Input: React.FunctionComponent<TextInputProps> = ({
     <Wrapper css={styledCss({ m: 2 })}>
       <Card
         css={styledCss({
+          boxShadow: "none",
           py: 2,
           px: 2,
           borderColor,
@@ -130,3 +131,5 @@ const RawInput = styled("input")<InputElementProps>(
     }
   }
 )
+
+export const Input = withStyleProps("Input", _Input)

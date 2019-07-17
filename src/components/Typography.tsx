@@ -1,7 +1,5 @@
 import styled from "@emotion/styled-base"
 import styledCSS from "@styled-system/css"
-import React from "react"
-import * as SS from "styled-system"
 import { boxStyle as baseStyle, withStyleProps } from "../util/styleComposition"
 
 export const Text: RosesSC = withStyleProps(

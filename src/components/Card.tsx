@@ -5,6 +5,7 @@ import { boxStyle as baseStyle, withStyleProps } from "../util/styleComposition"
 import { Box } from "./Layout"
 
 export const Card: RosesSC<RosesStyleProps> = withStyleProps(
+  "Card",
   styled("div")(
     baseStyle,
     styledCss({
@@ -12,6 +13,5 @@ export const Card: RosesSC<RosesStyleProps> = withStyleProps(
       borderRadius: 2,
       boxShadow: "0 0 16px rgba(0, 0, 0, .25)",
     })
-  ),
-  { variantBase: "variants.Card" }
+  )
 )

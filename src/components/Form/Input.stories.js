@@ -8,7 +8,7 @@ import { Input } from "components/Form/Input"
 
 storiesOf("Form/Input", module)
   .add("Text", () => (
-    <Flex mt={2} flexDirection="column" width="500px">
+    <Flex rx={{ mt: 2, flexDirection: "column", width: "500px" }}>
       <Input noBorder label="Name" placeholder="Hello" id="name" name="name" />
       <Input
         noBorder
@@ -30,7 +30,7 @@ storiesOf("Form/Input", module)
     </Flex>
   ))
   .add("Bordered Text", () => (
-    <Flex mt={2} flexDirection="column" width="500px">
+    <Flex rx={{ mt: 2 }} flexDirection="column" width="500px">
       <Input label="Name" placeholder="Hello" id="name" name="name" />
       <Input
         label="Email"
@@ -49,7 +49,7 @@ storiesOf("Form/Input", module)
     </Flex>
   ))
   .add("Bordered Text - Unlabeled", () => (
-    <Flex mt={2} width="500px">
+    <Flex rx={{ mt: 2, width: "500px" }}>
       <Input type="password" placeholder="Enter Slogan" />
     </Flex>
   ))

@@ -1,5 +1,5 @@
+import { Theme } from "@styled-system/css"
 import CSS from "csstype"
-import { Theme } from "styled-system"
 /** Base theme taken from theme-ui.com/demo base Theme */
 export const baseTheme: Theme & {
   styles: RosesThemeObject["htmlStyles"]

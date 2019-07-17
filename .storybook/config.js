@@ -6,7 +6,7 @@ import { RosesTheme } from "theme"
 const req = require.context("../src", true, /\.stories\.js$/)
 function loadStories() {
   req.keys().forEach(filename => {
-    console.log("loading stories from " + filename)
+    console.warn("loading stories from " + filename)
     //
     req(filename)
   })

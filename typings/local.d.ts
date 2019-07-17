@@ -1,8 +1,13 @@
 import { StyledComponent } from "@emotion/styled"
-import { SystemStyleObject } from "@styled-system/css"
+import {
+  ResponsiveStyleValue,
+  SystemStyleObject,
+  Theme,
+} from "@styled-system/css"
 import * as CSS from "csstype"
-import * as SS from "styled-system"
 
+// Copied from @types/styled-system to avoid an extra dependency
+export type ObjectOrArray<T> = T[] | { [K: string]: T | ObjectOrArray<T> }
 interface BaseThemeKnownColors {
   text: CSS.ColorProperty
   background: CSS.ColorProperty
@@ -13,10 +18,10 @@ interface BaseThemeKnownColors {
 
 declare global {
   interface RosesThemeColors extends BaseThemeKnownColors {
-    [k: string]: CSS.ColorProperty | SS.ObjectOrArray<CSS.ColorProperty>
+    [k: string]: CSS.ColorProperty | ObjectOrArray<CSS.ColorProperty>
   }
   /** The roses theme follows the styled-system/system-ui theme specification */
-  type RosesThemeObject = SS.Theme & {
+  type RosesThemeObject = Theme & {
     colors: RosesThemeColors
     /** Theme-ui html styles (incoming from baseTheme) */
     styles?: { [elementName: string]: SystemStyleObject }
@@ -41,7 +46,7 @@ declare global {
   >
 
   interface RosesStyleProps {
-    variant?: SS.ResponsiveValue<string>
+    variant?: ResponsiveStyleValue<string>
     /** A SystemStyleObject - theme-aware css to be applied last (see @styled-system/css) */
     rx?: SystemStyleObject
   }

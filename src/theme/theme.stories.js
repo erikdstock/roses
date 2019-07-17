@@ -7,8 +7,18 @@ import { defaultTheme } from "./defaultTheme"
 import _ from "lodash"
 
 const ColorBox = props => (
-  <Box m={2} textAlign="center">
-    <Box mb={1} py="70px" width="150px" height="150px" {...props}></Box>
+  <Box rx={{ m: 2, textAlign: "center" }}>
+    <Box
+      rx={{
+        mb: 1,
+        py: "70px",
+        width: "150px",
+        height: "150px",
+        bg: props.bg,
+        borderRadius: 2,
+      }}
+      {...props}
+    ></Box>
     <Text>{props.bg}</Text>
   </Box>
 )
@@ -32,14 +42,15 @@ const allColors = _.compact(
 
 storiesOf("Theme", module)
   .addDecorator(storyFn => (
-    <Flex flexDirection="row" flexWrap="wrap" p={3}>
+    <Flex rx={{ flexDirection: "row", flexWrap: "wrap", p: 3 }}>
       {storyFn()}
     </Flex>
   ))
   .add("Theme Object", () => {
     console.log(JSON.stringify(defaultTheme, null, 2))
+    delete defaultTheme.styles
     return (
-      <Text fontFamily="monospace">
+      <Text rx={{ fontFamily: "monospace" }}>
         {JSON.stringify(defaultTheme, null, 2)}
       </Text>
     )

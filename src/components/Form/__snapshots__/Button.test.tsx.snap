@@ -2,13 +2,24 @@
 
 exports[`Button renders correctly 1`] = `
 .emotion-0 {
+  display: inline-block;
   background: none;
+  font-family: 'Arial',system-ui,sans-serif;
+  font-size: 16px;
   color: inherit;
   border: none;
-  padding: 0;
-  font: inherit;
+  padding: 8px;
+  margin: 4px;
   cursor: pointer;
   outline: inherit;
+  border-radius: 5px;
+  color: #fff;
+  background-color: #07c;
+}
+
+.emotion-0:disabled {
+  background-color: hsl(0,0%,77%);
+  color: #f6f6f6;
 }
 
 <button
