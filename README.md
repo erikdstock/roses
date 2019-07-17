@@ -1,6 +1,8 @@
 # 🌹 Roses 🌹
 
-_Typed react component library feat. rebass styled-system styled-components_
+_Typed react component library layered on `emotion` and `@styled-system/css`_
+
+## TODO: Update README: everything below is out of date and wrong.
 
 `roses` is a simple, extendable design system. It builds on the following libraries, so it's best to be familiar with them as well:
 
@@ -20,36 +22,4 @@ Because `roses` hooks into styled components you'll need use a `ThemeProvider` t
 
 While the `styled-components` theme provider is very permissive in what it will accept as a theme, rebass and styled-system rely on a [specific set of properties](https://styled-system.com/theme-specification)- override these for more control over colors, spacing and more.
 
-```jsx
-import { RosesTheme, defaultTheme } from "roses"
-import { ThemeProvider } from "styled-components"
 
-// Adding a helpful tool to our theme.
-const customTheme = {
-  ...defaultTheme,
-  utils: {
-    breakApp: () => {
-      throw new Error("oops!")
-    },
-  },
-}
-
-// ThemeProvider Children must be a node, so <> Fragment </> is required
-const DefaultThemedApp = ({ children }) => (
-  <RosesTheme>
-    <>
-      <MyGlobalStyles />
-      {children}
-    </>
-  </RosesTheme>
-)
-
-const CustomThemedApp = ({ children }) => (
-  <ThemeProvider theme={customTheme}>
-    <>
-      <MyGlobalStyles />
-      {children}
-    </>
-  </ThemeProvider>
-)
-```
