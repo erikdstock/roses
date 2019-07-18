@@ -32,11 +32,7 @@ const themed: (path: string) => InterpolationFn = path => props => {
   return componentStyle && styledCss(componentStyle)
 }
 
-const themedComponent: (
-  name: string
-) => (p: StyledInterpolationProps) => CSSObject | undefined = (
-  name: string
-) => {
+const themedComponent: (name: string) => InterpolationFn = (name: string) => {
   // console.log("wrapping component with " + name + " styles")
   return themed(`${componentStylesRoot}.${name}`)
 }
@@ -80,17 +76,3 @@ export const withStyleProps = (
     rxHandler
   )
 }
-// /** Compose in the default style + variants for the key defined in your theme
-//  * @example ```
-//  * const theme = {
-//  *   styles: {
-//  *     Button: {
-//  *       color: "blue"
-//  *     }
-//  *   }
-//  * }
-//  *
-//  * const Button = styled('button')(ButtonProps, themed("Button"))
-//  * ```
-//  */
-// export const themed = key => props => props.theme.styles[key]

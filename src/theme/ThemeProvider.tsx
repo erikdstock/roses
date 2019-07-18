@@ -13,6 +13,7 @@ interface Props {
 /**
  * A theme provider
  */
-export const RosesTheme: React.FunctionComponent<Props> = ({ children }) => (
-  <ThemeProvider theme={defaultTheme}>{children}</ThemeProvider>
-)
+export const RosesTheme: React.FunctionComponent<Props> = ({
+  theme,
+  children,
+}) => <ThemeProvider theme={theme}>{children}</ThemeProvider>

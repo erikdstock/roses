@@ -31,14 +31,15 @@ const fonts: RosesThemeObject["fonts"] = {
   monospace: "'Courier New', monospace",
 }
 
+const htmlStyles = baseTheme.styles
+delete baseTheme.styles
+
 export const defaultTheme: RosesThemeObject = {
   ...baseTheme,
   colors,
   fonts,
   radii: [0, 2, 3, 5, 10],
-  htmlStyles: {
-    ...baseTheme.styles,
-  },
+  htmlStyles,
   componentStyles: {
     Button: {
       display: "inline-block",
