@@ -67,7 +67,7 @@ const variantHandler: VariantHandler = (componentKey, ops) => ({
 // export const withStyleProps = <P extends RosesStyleProps>(
 export const withStyleProps = (
   componentKey: string,
-  Component: React.ComponentType<RosesStyleProps>,
+  Component: React.ComponentType<any>,
   options: ComposeOptions = {}
 ) => {
   return styled(Component)<RosesStyleProps>(

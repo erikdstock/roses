@@ -6,7 +6,6 @@ import { defaultTheme } from "./defaultTheme"
 export { defaultTheme }
 
 interface Props {
-  // theme?: RebassTheme;
   theme?: RosesThemeObject
 }
 
@@ -14,6 +13,6 @@ interface Props {
  * A theme provider
  */
 export const RosesTheme: React.FunctionComponent<Props> = ({
-  theme,
+  theme = defaultTheme,
   children,
 }) => <ThemeProvider theme={theme}>{children}</ThemeProvider>
