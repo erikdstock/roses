@@ -9,9 +9,6 @@ exports[`Text Input Default renders correctly 1`] = `
 
 .emotion-2 {
   box-sizing: border-box;
-  padding: 4px;
-  border-radius: 3px;
-  box-shadow: 0 0 16px rgba(0,0,0,.25);
   padding: 8px;
   margin: 4px;
   display: inline-block;
@@ -150,9 +147,6 @@ exports[`Text Input Default renders disabled state correctly 1`] = `
 
 .emotion-2 {
   box-sizing: border-box;
-  padding: 4px;
-  border-radius: 3px;
-  box-shadow: 0 0 16px rgba(0,0,0,.25);
   padding: 8px;
   margin: 4px;
   display: inline-block;
@@ -247,9 +241,6 @@ exports[`Text Input Default renders error state correctly 1`] = `
 
 .emotion-2 {
   box-sizing: border-box;
-  padding: 4px;
-  border-radius: 3px;
-  box-shadow: 0 0 16px rgba(0,0,0,.25);
   padding: 8px;
   margin: 4px;
   display: inline-block;
@@ -314,9 +305,6 @@ exports[`Text Input No Border renders correctly 1`] = `
 
 .emotion-2 {
   box-sizing: border-box;
-  padding: 4px;
-  border-radius: 3px;
-  box-shadow: 0 0 16px rgba(0,0,0,.25);
   padding: 8px;
   margin: 4px;
   display: inline-block;
@@ -442,9 +430,6 @@ exports[`Text Input No Border renders disabled state correctly 1`] = `
 
 .emotion-2 {
   box-sizing: border-box;
-  padding: 4px;
-  border-radius: 3px;
-  box-shadow: 0 0 16px rgba(0,0,0,.25);
   padding: 8px;
   margin: 4px;
   display: inline-block;
@@ -509,9 +494,6 @@ exports[`Text Input No Border renders error state correctly 1`] = `
 
 .emotion-2 {
   box-sizing: border-box;
-  padding: 4px;
-  border-radius: 3px;
-  box-shadow: 0 0 16px rgba(0,0,0,.25);
   padding: 8px;
   margin: 4px;
   display: inline-block;
