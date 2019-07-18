@@ -132,4 +132,4 @@ const RawInput = styled("input")<InputElementProps>(
   }
 )
 
-export const Input = withStyleProps("Input", _Input)
+export const Input = withStyleProps({ name: "Input", component: _Input })

@@ -13,6 +13,15 @@ It builds on the following libraries, so it's best to be familiar with them as w
 
 For more context and alternatives, see [Related Projects](#related-projects)
 
+### I already know what this stuff is.
+
+TLDR:
+
+- Roses keeps all responsive styles in an `rx` prop using `@styled-system/css`.
+- Simple components can be styled in the theme directly under the `componentStyles` and `variants` keys- use the `withStyleProps()` HOC which will first apply any `componentStyles` you've defined and add `rx` and `variant` props.
+- More complex components can be defined like any other `emotion` component in the context of a `styled-system` theme.
+- Good type support.
+
 ### Motivation
 
 `roses` began as work on a design system for my own use- an extension of `rebass` using `styled-components` to build a library of reusable, themable components. Over time (and having never built a design system on my own) a couple pain points crept in:
@@ -35,13 +44,12 @@ yarn add roses @styled-system/css @emotion/core
 
 ### Configure `ThemeProvider`
 
-All of your components must to be wrapped in an emotion `ThemeProvider` containing a theme object. You can bring your own from the [`emotion-theming` package](https://emotion.sh/docs/emotion-theming#themeprovider-reactcomponenttype) or import it directly:
+All of your components must to be wrapped in an emotion `ThemeProvider` containing a theme object. You can bring your own from the [`emotion-theming` package](https://emotion.sh/docs/emotion-theming#themeprovider-reactcomponenttype) or import it directly for some extra type hints:
 
 ```js
 import { RosesTheme, defaultTheme } from "roses"
 // import { ThemeProvider } from 'emotion-theming'
 
-// customize your theme (or build one from scratch).
 const theme = {
   ...defaultTheme,
   colors: {
@@ -57,18 +65,17 @@ export const App = props => {
 }
 ```
 
-### Usage
+The `defaultTheme` export is an extension of the [theme-ui `base` preset](https://theme-ui.com/demo)
 
-TODO
+## Usage
 
 ### Defining components
 
-TODO
-_tldr:_
+Given a theme:
 
 ```js
 
-// theme..
+// extending the default theme..
 {
   ...defaultTheme
   breakpoints: ["780px"], // just a single breakpoint.
@@ -76,46 +83,52 @@ _tldr:_
   componentStyles: {
     Rectangle: {
       color: ["black", "red"] // at 1st breakpoint the text turns red for some reason.
-      width: "80px",
-      height: "100px"
-    }
+      padding: 1,  // indexed to `space` key
+      mx: 3
+    },
+    Widget: { ... }
   }
   variants: {
     Rectangle: {
-      primary: {
+      hot: {
         bg: "primary"
       }
-      secondary: {
-        bg: "secondary",
-        width: "100px",
-        height: "80px",
-        borderRadius: 3  // 8px border-radius
-      }
+      cold: { ... }
     }
   }
 }
-
-import { withStyleProps } from 'roses'
-import { styled } from '@emotion/styled'
-const Rectangle = withStyleProps(
-  /* The key where we will find our variants and componentStyles */
-  "Rectangle",
-  /* The component to be styled */
-  styled('div')(),
-  /* Extra options (currently just this one- maybe combine with 1st arg? */
-  { defaultVariant: "primary"}
-)
 ```
+
+We can make a `Rectangle using the full api:
+
+```js
+const Rectangle = withStyleProps({
+  name: "Rectangle",
+  component: "div",
+  defaultVariant: "hot",
+})
+```
+
+... Or a string shorthand - with a default base component of `styled('div')({boxSizing: 'border-box'})`:
+
+```js
+const Widget = withStyleProps("Widget")
+```
+
+Since this is all just emotion in the context of a system-ui theme under the covers, you can also build more complex components (whose styles probably won't belong in your theme). See the `emotion`/`@styled-system/css` docs for more details.
 
 ### Variants
 
-TODO
+Variants defined in `theme.variants[ComponentName]` are accessible via the `variant` prop and applied over the base styles.
 
 ### The `rx` prop
+**TODO: Clarify where the `/** @jsx jsx /**` pragma is required.**
 
 _heavily inspired by [`theme-ui`'s `sx` prop](#)_.
 
-`theme-ui` introduced the `sx` prop. After some consideration I thought it was a good idea and decided to copy it. Similar to a vanilla react component's `styles` prop, which accepts a [`SystemStyleObject`](#)- a `roses` component accepts the same `SystemStyleObject` as its `rx` prop. This is a familiar extension of the vanilla `styles` api with the responsive, theme-aware values and shortcuts that `styled-system/css` introduced.
+The final styles applied come from the `rx` prop.
+
+`theme-ui` introduced the `sx` prop. It seemed like a good idea, so `roses` decided to copy it. Similar to a vanilla react component's `styles` prop, `rx` accepts a [`SystemStyleObject`](#). This is a familiar extension of the vanilla `styles` api with the responsive, theme-aware values and shortcuts that `styled-system/css` introduced.
 
 # Related projects
 
@@ -124,6 +137,10 @@ _heavily inspired by [`theme-ui`'s `sx` prop](#)_.
 - [rebass](https://rebassjs.org/) brings a layer of additional convention to styled-system with some UI primitives that you would have had to build anyway. It uses `styled-components`
 - [theme-ui](https://theme-ui.com/) builds on the work of rebass, but makes the switch to `emotion` and includes built-in support for MDX.
 - [system-ui](https://system-ui.com/theme/) is (to my knowledge) the original responsive theme spec from which `styled-system`, `rebass` and `theme-ui` grew.
-- [@artsy/palette](https://palette.artsy.net/) was my first encounter with a production design system built styled-system. Web and React Native.
+- [@artsy/palette](https://palette.artsy.net/) was my first encounter with a production design system built styled-system. For Web and React Native/iOS.
 
 # License
+MIT for now.
+
+# Contributors
+Docs, PRs and Bug reports welcome. Contributors agree that this project may be relicensed in the future.

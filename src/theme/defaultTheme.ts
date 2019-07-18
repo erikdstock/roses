@@ -46,7 +46,6 @@ export const defaultTheme: RosesThemeObject = {
       background: "none",
       fontFamily: "sans",
       fontSize: 2,
-
       color: "inherit",
       border: "none",
       p: 2,
@@ -65,6 +64,17 @@ export const defaultTheme: RosesThemeObject = {
       display: "inline-block",
       borderRadius: 2,
       boxShadow: "0 0 16px rgba(0, 0, 0, .25)",
+    },
+    Heading: {
+      lineHeight: "heading",
+      fontWeight: "heading",
+      fontFamily: "heading",
+      fontSize: 5,
+    },
+    Text: {
+      lineHeight: "body",
+      whiteSpace: "pre-wrap",
+      fontFamily: "body",
     },
   },
   variants: {

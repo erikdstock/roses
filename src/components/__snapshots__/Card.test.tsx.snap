@@ -3,9 +3,6 @@
 exports[`Card renders correctly 1`] = `
 .emotion-0 {
   box-sizing: border-box;
-  padding: 4px;
-  border-radius: 3px;
-  box-shadow: 0 0 16px rgba(0,0,0,.25);
   padding: 8px;
   margin: 4px;
   display: inline-block;

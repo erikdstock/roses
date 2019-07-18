@@ -1,6 +1,5 @@
 import { ThemeProvider } from "emotion-theming"
 import React from "react"
-// import { defaultTheme, RebassTheme } from "./theme";
 import { defaultTheme } from "./defaultTheme"
 
 export { defaultTheme }
@@ -10,7 +9,8 @@ interface Props {
 }
 
 /**
- * A theme provider
+ * A plain theme provider that, when type-checked, expects theme keys described
+ * by roses (componentStyles, variants)
  */
 export const RosesTheme: React.FunctionComponent<Props> = ({
   theme = defaultTheme,

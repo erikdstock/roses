@@ -1,6 +1,6 @@
 import React from "react"
 import { configure, addDecorator } from "@storybook/react"
-import { RosesTheme, defaultTheme } from "Theme"
+import { RosesTheme, defaultTheme } from "../src/Theme"
 
 // automatically import all files ending in *.stories.js
 const req = require.context("../src", true, /\.stories\.js$/)
