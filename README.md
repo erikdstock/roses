@@ -37,7 +37,7 @@ _Define core component styles and variants on the theme_: Because the `system-ui
 Add the package and any missing peer dependencies:
 
 ```sh
-yarn add roses @styled-system/css @emotion/core
+yarn add roses @styled-system/css @emotion/core @emotion/styled
 # if using ts
 # yarn add @types/styled-system__css @types/styled-system etc etc etc ...
 ```
@@ -70,6 +70,8 @@ The `defaultTheme` export is an extension of the [theme-ui `base` preset](https:
 ## Usage
 
 ### Defining components
+
+Basic component styles can be defined under the theme `componentStyles` key. Rebass apparently uses a [similar, undocumented approach](https://github.com/rebassjs/rebass/blob/99efe79af0b62fa061f9c115bf472c6448d8eb32/src/index.js#L34) but keys are at the top level- this one I didn't know about.
 
 Given a theme:
 

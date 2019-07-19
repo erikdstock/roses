@@ -1,16 +1,28 @@
 import styled from "@emotion/styled"
-import ssCss, { CSSObject, SystemStyleObject } from "@styled-system/css"
+import ssCss, {
+  CSSObject,
+  ResponsiveStyleValue,
+  SystemStyleObject,
+} from "@styled-system/css"
 
 import get from "lodash/get"
-
-/** Clumsily force styledCss function to believe that there will be a theme present */
-type StyledCssFn = (o: SystemStyleObject) => CSSObject
-const styledCss = ssCss as StyledCssFn
+import { RosesThemeObject } from "../theme"
+import { RosesSC } from "../types"
 
 /** The base style for Box and everything on up. */
 export const boxStyle: CSSObject = {
   boxSizing: "border-box",
 }
+
+interface RosesStyleProps {
+  variant?: ResponsiveStyleValue<string>
+  /** A SystemStyleObject - theme-aware css to be applied last (see @styled-system/css) */
+  rx?: SystemStyleObject
+}
+
+/** Clumsily force styledCss function to believe that there will be a theme present */
+type StyledCssFn = (o: SystemStyleObject) => CSSObject
+const styledCss = ssCss as StyledCssFn
 
 const themeVariantsRoot: keyof RosesThemeObject = "variants"
 const componentStylesRoot: keyof RosesThemeObject = "componentStyles"
@@ -28,7 +40,6 @@ const themed: (path: string) => InterpolationFn = path => props => {
 }
 
 const themedComponent: (name: string) => InterpolationFn = (name: string) => {
-  // console.log("wrapping component with " + name + " styles")
   return themed(`${componentStylesRoot}.${name}`)
 }
 
@@ -44,7 +55,6 @@ const variantHandler: VariantHandler = (componentKey, defaultVariant) => ({
   if (selectedVariant) {
     const base = `${themeVariantsRoot}.${componentKey}`
     const variantCss = get(theme, `${base}.${selectedVariant}`)
-    // console.log("variant: ", variantCss)
     return variantCss && styledCss(variantCss)
   }
 }
@@ -55,8 +65,16 @@ interface ComposeStylesOptions {
   component?: React.ComponentType<any> | keyof JSX.IntrinsicElements
 }
 
-/** The default starting component */
-const BaseBox = styled("div")(boxStyle)
+const themedBoxDiv: (n: string, defaultVariant?: string) => RosesSC = (
+  name,
+  defaultVariant
+) =>
+  styled("div")<RosesStyleProps>(
+    boxStyle,
+    themedComponent(name),
+    variantHandler(name, defaultVariant),
+    rxHandler
+  )
 
 /**
  * Wrap a base styled component with:
@@ -75,17 +93,16 @@ export const withStyleProps: (
 ) => RosesSC = options => {
   if (typeof options === "string") {
     const name = options as keyof JSX.IntrinsicElements
-    return styled(BaseBox)<RosesStyleProps>(
-      themedComponent(name),
-      variantHandler(name),
-      rxHandler
-    )
+    return themedBoxDiv(name)
   } else {
-    const component = options.component || BaseBox
-    return styled(component as React.ComponentType<any>)<RosesStyleProps>(
-      themedComponent(options.name),
-      variantHandler(options.name, options.defaultVariant),
-      rxHandler
-    )
+    const component = options.component
+
+    return component
+      ? styled(component as React.ComponentType<any>)<RosesStyleProps>(
+          themedComponent(options.name),
+          variantHandler(options.name, options.defaultVariant),
+          rxHandler
+        )
+      : themedBoxDiv(options.name, options.defaultVariant)
   }
 }

@@ -33,8 +33,10 @@
   "typings": "./dist/index.d.ts",
   "peerDependencies": {
     "@emotion/core": "^10.0.14",
-    "react": "^16.7.0",
-    "react-dom": "^16.7.0"
+    "@emotion/styled": "^10.0.14",
+    "@styled-system/css": "^5.0.13",
+    "react-dom": "^16.7.0",
+    "react": "^16.7.0"
   },
   "devDependencies": {
     "@babel/cli": "^7.2.0",

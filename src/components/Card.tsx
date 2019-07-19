@@ -1,9 +1,6 @@
-import styled from "@emotion/styled"
-import styledCss from "@styled-system/css"
-import React from "react"
-import { boxStyle as baseStyle, withStyleProps } from "../util/styleComposition"
-import { Box } from "./Layout"
+import { RosesSC } from "../types"
+import { withStyleProps } from "../util/styleComposition"
 
-export const Card: RosesSC<RosesStyleProps> = withStyleProps({
+export const Card: RosesSC = withStyleProps({
   name: "Card",
 })

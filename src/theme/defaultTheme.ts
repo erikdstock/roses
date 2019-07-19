@@ -1,4 +1,5 @@
 import { baseTheme } from "./baseTheme"
+import { RosesThemeObject } from "./types"
 
 const { text, background, primary, secondary, muted } = baseTheme.colors
 
