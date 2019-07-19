@@ -2,7 +2,7 @@ import React from "react"
 
 import { action } from "@storybook/addon-actions"
 import { addDecorator, storiesOf } from "@storybook/react"
-import { Flex } from "../Layout"
+import { Flex } from "./Layout"
 
 import { Button } from "components/Form/Button"
 

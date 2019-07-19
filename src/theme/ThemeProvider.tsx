@@ -1,6 +1,7 @@
 import { ThemeProvider } from "emotion-theming"
 import React from "react"
 import { defaultTheme } from "./defaultTheme"
+import { RosesThemeObject } from "./types"
 
 export { defaultTheme }
 
