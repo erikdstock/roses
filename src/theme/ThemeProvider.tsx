@@ -13,7 +13,7 @@ interface Props {
  * A plain theme provider that, when type-checked, expects theme keys described
  * by roses (componentStyles, variants)
  */
-export const RosesThemeProvider: React.FunctionComponent<Props> = ({
+export const RosesTheme: React.FunctionComponent<Props> = ({
   theme = defaultTheme,
   children,
 }) => <ThemeProvider theme={theme}>{children}</ThemeProvider>
