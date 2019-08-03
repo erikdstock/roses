@@ -1,9 +1,4 @@
-import ssCss, {
-  CSSObject,
-  ResponsiveStyleValue,
-  SystemStyleObject,
-  Theme,
-} from "@styled-system/css"
+import { SystemStyleObject, Theme } from "@styled-system/css"
 import * as CSS from "csstype"
 
 type ObjectOrArray<T> = T[] | { [K: string]: T | ObjectOrArray<T> }

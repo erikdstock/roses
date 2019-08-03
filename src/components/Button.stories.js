@@ -4,7 +4,7 @@ import { action } from "@storybook/addon-actions"
 import { addDecorator, storiesOf } from "@storybook/react"
 import { Flex } from "./Layout"
 
-import { Button } from "components/Form/Button"
+import { Button } from "components/Button"
 
 storiesOf("Form/Button", module)
   .add("with text", () => (

@@ -4,8 +4,8 @@ import ssCss, {
   ResponsiveStyleValue,
   SystemStyleObject,
 } from "@styled-system/css"
-
 import get from "lodash/get"
+import React from "react"
 import { RosesThemeObject } from "../theme"
 import { RosesSC } from "../types"
 
@@ -43,7 +43,9 @@ const themedComponent: (name: string) => InterpolationFn = (name: string) => {
   return themed(`${componentStylesRoot}.${name}`)
 }
 
-const rxHandler: InterpolationFn = ({ rx }) => rx && styledCss(rx)
+const rxHandler: InterpolationFn = ({ rx, ...r }) => {
+  return rx && styledCss(rx)
+}
 
 type VariantHandler = (key: string, defaultVariant?: string) => InterpolationFn
 
@@ -78,15 +80,15 @@ const themedBoxDiv: (n: string, defaultVariant?: string) => RosesSC = (
 
 /**
  * Wrap a base styled component with:
- *   - a responsive, theme-aware style `css` prop
+ *   - a responsive, theme-aware style `rx` prop
  *   - a `variant` prop for accessing styles set on the theme.variants key
  * @example:
- * ```tsx
+ *
  *  const RawBox = styled('div')({boxSizing: 'border-box'})
  *
  *  const Box = withStyleProps({name: 'Box', component: RawBox, defaultVariant: "hot"})
  *  const Widget = withStyleProps('Widget')
- * ```
+ *
  */
 export const withStyleProps: (
   options: ComposeStylesOptions | string
@@ -98,7 +100,10 @@ export const withStyleProps: (
     const component = options.component
 
     return component
-      ? styled(component as React.ComponentType<any>)<RosesStyleProps>(
+      ? styled(component as React.ComponentType<any>, {
+          shouldForwardProp: propName =>
+            propName !== "rx" && propName !== "variant",
+        })<RosesStyleProps>(
           themedComponent(options.name),
           variantHandler(options.name, options.defaultVariant),
           rxHandler

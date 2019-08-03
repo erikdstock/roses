@@ -3,9 +3,7 @@ import React from "react"
 import { action } from "@storybook/addon-actions"
 import { addDecorator, storiesOf } from "@storybook/react"
 import { Card } from "./Card"
-import { Heading } from './Typography'
-
-import { Button } from "components/Form/Button"
+import { Heading } from "./Typography"
 
 storiesOf("Card", module).add("with text", () => (
   <Card>

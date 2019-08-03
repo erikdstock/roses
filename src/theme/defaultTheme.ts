@@ -64,7 +64,6 @@ export const defaultTheme: RosesThemeObject = {
       m: 1,
       display: "inline-block",
       borderRadius: 2,
-      boxShadow: "0 0 16px rgba(0, 0, 0, .25)",
     },
     Heading: {
       lineHeight: "heading",
@@ -88,6 +87,11 @@ export const defaultTheme: RosesThemeObject = {
         color: "primary",
         bg: "background",
         boxShadow: "inset 0 0 0 2px",
+      },
+    },
+    Card: {
+      shadow: {
+        boxShadow: "0 0 16px rgba(0, 0, 0, .25)",
       },
     },
   },
