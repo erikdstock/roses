@@ -6,7 +6,7 @@ import ssCss, {
 } from "@styled-system/css"
 import get from "lodash/get"
 import React from "react"
-import { RosesThemeObject } from "../theme"
+import { RosesThemeObject } from "../Theme"
 import { RosesSC } from "../types"
 
 /** The base style for Box and everything on up. */
