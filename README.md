@@ -1,3 +1,5 @@
+[![npm version](https://badge.fury.io/js/roses.svg)](https://badge.fury.io/js/roses) [![CircleCI](https://circleci.com/gh/erikdstock/roses.svg?style=svg)](https://circleci.com/gh/erikdstock/roses)
+
 # 🌹 Roses 🌹
 
 _React component library layered atop `emotion` and `@styled-system/css`. Built with Typescript._
@@ -124,6 +126,7 @@ Since this is all just emotion in the context of a system-ui theme under the cov
 Variants defined in `theme.variants[ComponentName]` are accessible via the `variant` prop and applied over the base styles.
 
 ### The `rx` prop
+
 **TODO: Clarify where the `/** @jsx jsx /**` pragma is required.**
 
 _heavily inspired by [`theme-ui`'s `sx` prop](#)_.
@@ -142,7 +145,9 @@ The final styles applied come from the `rx` prop.
 - [@artsy/palette](https://palette.artsy.net/) was my first encounter with a production design system built styled-system. For Web and React Native/iOS.
 
 # License
+
 MIT for now.
 
 # Contributors
+
 Docs, PRs and Bug reports welcome. Contributors agree that this project may be relicensed in the future.
