@@ -1,5 +1,5 @@
 import styled from "@emotion/styled"
-import { boxStyle as baseStyle, themed } from "../styleComposition"
+import { boxStyle as baseStyle, themed } from "../theming"
 import { RosesSC } from "../types"
 
 export const Box: RosesSC = themed({

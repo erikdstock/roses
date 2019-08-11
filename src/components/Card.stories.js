@@ -12,7 +12,7 @@ storiesOf("Card", module)
     </Card>
   ))
   .add("with shadow", () => (
-    <Card variant="shadow">
+    <Card sx={{ color: "primary" }} variant="shadow">
       <Heading>Hello Card</Heading>
     </Card>
   ))

@@ -21,18 +21,14 @@ exports[`themed() adds component themes + variants from the theme 2`] = `
 />
 `;
 
-exports[`withStyleProps adds an rx prop that takes styled-system/css inputs 1`] = `
+exports[`themed() has an sx prop for theme-aware styles 1`] = `
 .emotion-0 {
   box-sizing: border-box;
-  background-color: green;
+  color: red;
+  color: tomato;
 }
 
 <div
   className="emotion-0"
-  rx={
-    Object {
-      "bg": "secondary",
-    }
-  }
 />
 `;

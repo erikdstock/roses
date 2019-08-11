@@ -11,7 +11,7 @@ _React component library layered atop `emotion` and `@styled-system/css`. Built 
 It builds on the following libraries, so it's best to be familiar with them as well:
 
 - [emotion](https://emotion.sh/docs/introduction) for css-in-js
-- [styled-system](https://styled-system.com) for handy prop-based styles that cover most use cases - in particular `roses` opts for [styling using `@styled-system/css`](#the-rx-prop)
+- [styled-system](https://styled-system.com) for handy prop-based styles that cover most use cases - in particular `roses` opts for [styling using `@styled-system/css`](#the-sx-prop)
 
 For more context and alternatives, see [Related Projects](#related-projects)
 
@@ -19,8 +19,8 @@ For more context and alternatives, see [Related Projects](#related-projects)
 
 TLDR:
 
-- Roses keeps all responsive styles in an `rx` prop using `@styled-system/css`.
-- Simple components can be styled in the theme directly under the `componentStyles` and `variants` keys- use the `withStyleProps()` HOC which will first apply any `componentStyles` you've defined and add `rx` and `variant` props.
+- Roses keeps all responsive styles in an `sx` prop using `@styled-system/css`.
+- Simple components can be styled in the theme directly under the `componentStyles` and `variants` keys- use the `themed()` HOC which will first apply any `componentStyles` you've defined and add `sx` and `variant` props.
 - More complex components can be defined like any other `emotion` component in the context of a `styled-system` theme.
 - Good type support.
 
@@ -30,7 +30,7 @@ TLDR:
 
 _Emotion as the css-in-js library_: Early on I ran into some wrinkles around the styled-components' @types package. This was part of the motivation for switching to `emotion`. Additionally, it is smaller and (as of early 2019) rumoured to be more performant than styled-components.
 
-_Responsive, theme-aware styles in a single prop_: Collaborators were less enthusiastic about the many `styled-system` props, especially when combined with the need to define Ts interfaces, account for the presence of a `theme` and know which props you could use where. By electing to restrict themed styles to a single prop, the total surface area of props to maintain and remember is greatly reduced. It is also designed to be more friendly to users who aren't completely sold on css-in-js. _Notably [this prop](#the-rx-prop) is baldly stolen from theme-ui._
+_Responsive, theme-aware styles in a single prop_: Collaborators were less enthusiastic about the many `styled-system` props, especially when combined with the need to define Ts interfaces, account for the presence of a `theme` and know which props you could use where. By electing to restrict themed styles to a single prop, the total surface area of props to maintain and remember is greatly reduced. It is also designed to be more friendly to users who aren't completely sold on css-in-js. _Notably [this prop](#the-sx-prop) is baldly stolen from theme-ui._
 
 _Define core component styles and variants on the theme_: Because the `system-ui` theme spec is wide open, different libraries have augmented it with their own keys. This is fine, but I wanted to introduce a bit of stability and the ability to define core component styles like those exported from [rebass](#related-projects) within the theme itself. `@styled-system/css` makes this pretty straightforward, so I settled on top-level keys of `componentStyles`, `variants` and `htmlStyles (TODO)`. The result is much less overhead in defining components that are at their hearts the composition of a `div` and a few style objects.
 
@@ -106,7 +106,7 @@ Given a theme:
 We can make a `Rectangle using the full api:
 
 ```js
-const Rectangle = withStyleProps({
+const Rectangle = themed({
   name: "Rectangle",
   component: "div",
   defaultVariant: "hot",
@@ -116,7 +116,7 @@ const Rectangle = withStyleProps({
 ... Or a string shorthand - with a default base component of `styled('div')({boxSizing: 'border-box'})`:
 
 ```js
-const Widget = withStyleProps("Widget")
+const Widget = themed("Widget")
 ```
 
 Since this is all just emotion in the context of a system-ui theme under the covers, you can also build more complex components (whose styles probably won't belong in your theme). See the `emotion`/`@styled-system/css` docs for more details.
@@ -125,15 +125,13 @@ Since this is all just emotion in the context of a system-ui theme under the cov
 
 Variants defined in `theme.variants[ComponentName]` are accessible via the `variant` prop and applied over the base styles.
 
-### The `rx` prop
+### The `sx` prop
 
-**TODO: Clarify where the `/** @jsx jsx /**` pragma is required.**
+_heavily inspired by [`theme-ui`'s `sx` prop](https://theme-ui.com/sx-prop)_.
 
-_heavily inspired by [`theme-ui`'s `sx` prop](#)_.
+The final styles applied come from the `sx` prop.
 
-The final styles applied come from the `rx` prop.
-
-`theme-ui` introduced the `sx` prop. It seemed like a good idea, so `roses` decided to copy it. Similar to a vanilla react component's `styles` prop, `rx` accepts a [`SystemStyleObject`](#). This is a familiar extension of the vanilla `styles` api with the responsive, theme-aware values and shortcuts that `styled-system/css` introduced.
+`theme-ui` introduced the `sx` prop. It seemed like a good idea, so `roses` decided to copy it. Similar to a vanilla react component's `styles` prop, `sx` accepts a [`SystemStyleObject`]. This is a familiar extension of the vanilla `styles` api with the responsive, theme-aware values and shortcuts that `styled-system/css` introduced. `sx` is a functional copy of `theme-ui`'s version: It passes your styles on to the emotion css prop: `<Box sx={myStyles} />` `==` `<Box css={{styledCss(myStyles)}}/>`.
 
 # Related projects
 

@@ -1,4 +1,4 @@
-import { themed } from "../styleComposition"
+import { themed } from "../theming"
 
 export const Button = themed({
   name: "Button",

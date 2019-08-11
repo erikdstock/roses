@@ -8,9 +8,9 @@ import flatten from "lodash/flatten"
 import compact from "lodash/compact"
 
 const ColorBox = props => (
-  <Box rx={{ m: 2, textAlign: "center" }}>
+  <Box sx={{ m: 2, textAlign: "center" }}>
     <Box
-      rx={{
+      sx={{
         mb: 1,
         py: "70px",
         width: "150px",
@@ -43,7 +43,7 @@ const allColors = compact(
 
 storiesOf("Theme", module)
   .addDecorator(storyFn => (
-    <Flex rx={{ flexDirection: "row", flexWrap: "wrap", p: 3 }}>
+    <Flex sx={{ flexDirection: "row", flexWrap: "wrap", p: 3 }}>
       {storyFn()}
     </Flex>
   ))
@@ -51,7 +51,7 @@ storiesOf("Theme", module)
     console.log(JSON.stringify(defaultTheme, null, 2))
     delete defaultTheme.styles
     return (
-      <Text rx={{ fontFamily: "monospace" }}>
+      <Text sx={{ fontFamily: "monospace" }}>
         {JSON.stringify(defaultTheme, null, 2)}
       </Text>
     )
