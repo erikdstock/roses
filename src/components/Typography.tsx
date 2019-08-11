@@ -1,5 +1,5 @@
-import { withStyleProps } from "../styleComposition"
+import { themed } from "../styleComposition"
 import { RosesSC } from "../types"
 
-export const Text: RosesSC = withStyleProps("Text")
-export const Heading: RosesSC = withStyleProps("Heading")
+export const Text: RosesSC = themed("Text")
+export const Heading: RosesSC = themed("Heading")

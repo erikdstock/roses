@@ -1,0 +1,38 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`themed() adds component themes + variants from the theme 1`] = `
+.emotion-0 {
+  box-sizing: border-box;
+  color: red;
+}
+
+<div
+  className="emotion-0"
+/>
+`;
+
+exports[`themed() adds component themes + variants from the theme 2`] = `
+.emotion-0 {
+  box-sizing: border-box;
+}
+
+<div
+  className="emotion-0"
+/>
+`;
+
+exports[`withStyleProps adds an rx prop that takes styled-system/css inputs 1`] = `
+.emotion-0 {
+  box-sizing: border-box;
+  background-color: green;
+}
+
+<div
+  className="emotion-0"
+  rx={
+    Object {
+      "bg": "secondary",
+    }
+  }
+/>
+`;

@@ -1,7 +1,6 @@
-import { withStyleProps } from "../styleComposition"
+import { themed } from "../styleComposition"
 
-export const Button = withStyleProps({
+export const Button = themed({
   name: "Button",
   component: "button",
-  defaultVariant: "primary",
 })
