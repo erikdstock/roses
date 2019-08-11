@@ -1,5 +1,5 @@
 import { StyledComponent } from "@emotion/styled"
-import { ResponsiveStyleValue, SystemStyleObject } from "@styled-system/css"
+import { SystemStyleObject } from "@styled-system/css"
 import { RosesThemeObject } from "./Theme"
 
 export type RosesSC<Inner = RosesStyleProps, Style = any> = StyledComponent<
@@ -7,8 +7,11 @@ export type RosesSC<Inner = RosesStyleProps, Style = any> = StyledComponent<
   Style,
   RosesThemeObject
 >
+
+export type RosesStyledComponent = RosesSC
+
 export interface RosesStyleProps {
-  variant?: ResponsiveStyleValue<string>
+  variant?: string
   /** A SystemStyleObject - theme-aware css to be applied last (see @styled-system/css) */
-  rx?: SystemStyleObject
+  sx?: SystemStyleObject
 }

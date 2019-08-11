@@ -1,0 +1,34 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`themed() adds component themes + variants from the theme 1`] = `
+.emotion-0 {
+  box-sizing: border-box;
+  color: red;
+}
+
+<div
+  className="emotion-0"
+/>
+`;
+
+exports[`themed() adds component themes + variants from the theme 2`] = `
+.emotion-0 {
+  box-sizing: border-box;
+}
+
+<div
+  className="emotion-0"
+/>
+`;
+
+exports[`themed() has an sx prop for theme-aware styles 1`] = `
+.emotion-0 {
+  box-sizing: border-box;
+  color: red;
+  color: tomato;
+}
+
+<div
+  className="emotion-0"
+/>
+`;

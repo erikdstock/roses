@@ -11,6 +11,12 @@ interface BaseThemeKnownColors {
   muted: CSS.ColorProperty
 }
 
+interface SystemStyleWithVariants extends SystemStyleObject {
+  variants?: {
+    [k: string]: SystemStyleObject
+  }
+}
+
 interface RosesThemeColors extends BaseThemeKnownColors {
   [k: string]: CSS.ColorProperty | ObjectOrArray<CSS.ColorProperty>
 }
@@ -18,11 +24,11 @@ interface RosesThemeColors extends BaseThemeKnownColors {
 export type RosesThemeObject = Theme & {
   colors: RosesThemeColors
   /** Theme-ui html styles (incoming from baseTheme) */
-  styles?: { [elementName: string]: SystemStyleObject }
+  styles?: { [elementName: string]: SystemStyleWithVariants }
   /** Roses html styles */
   htmlStyles?: { [elementName: string]: SystemStyleObject }
   /** Roses component styles */
-  componentStyles?: { [componentName: string]: SystemStyleObject }
+  componentStyles?: { [componentName: string]: SystemStyleWithVariants }
   /** Custom component variant styles */
   variants?: {
     [componentName: string]: { [variant: string]: SystemStyleObject }

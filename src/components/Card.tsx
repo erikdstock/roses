@@ -1,6 +1,4 @@
-import { withStyleProps } from "../styleComposition"
+import { themed } from "../theming"
 import { RosesSC } from "../types"
 
-export const Card: RosesSC = withStyleProps({
-  name: "Card",
-})
+export const Card: RosesSC = themed("Card")

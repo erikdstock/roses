@@ -47,16 +47,24 @@ export const defaultTheme: RosesThemeObject = {
       background: "none",
       fontFamily: "sans",
       fontSize: 2,
-      color: "inherit",
       border: "none",
       p: 2,
       m: 1,
       cursor: "pointer",
       outline: "inherit",
       borderRadius: 3,
+      color: "background",
+      bg: "primary",
       ":disabled": {
         bg: "gray.5",
         color: "muted",
+      },
+      variants: {
+        outline: {
+          color: "primary",
+          bg: "background",
+          boxShadow: "inset 0 0 0 2px",
+        },
       },
     },
     Card: {
@@ -64,6 +72,11 @@ export const defaultTheme: RosesThemeObject = {
       m: 1,
       display: "inline-block",
       borderRadius: 2,
+      variants: {
+        shadow: {
+          boxShadow: "0 0 16px rgba(0, 0, 0, .25)",
+        },
+      },
     },
     Heading: {
       lineHeight: "heading",
@@ -75,24 +88,6 @@ export const defaultTheme: RosesThemeObject = {
       lineHeight: "body",
       whiteSpace: "pre-wrap",
       fontFamily: "body",
-    },
-  },
-  variants: {
-    Button: {
-      primary: {
-        color: "background",
-        bg: "primary",
-      },
-      outline: {
-        color: "primary",
-        bg: "background",
-        boxShadow: "inset 0 0 0 2px",
-      },
-    },
-    Card: {
-      shadow: {
-        boxShadow: "0 0 16px rgba(0, 0, 0, .25)",
-      },
     },
   },
 }

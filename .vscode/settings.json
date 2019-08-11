@@ -1,5 +1,11 @@
 {
-  "cSpell.words": ["Plex", "docz", "flexbox", "monospace"],
+  "cSpell.words": [
+    "Plex",
+    "docz",
+    "flexbox",
+    "monospace",
+    "theming"
+  ],
   "prettier.semi": false,
   "editor.formatOnSave": true,
   "typescript.tsdk": "node_modules/typescript/lib",
