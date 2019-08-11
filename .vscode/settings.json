@@ -1,11 +1,14 @@
 {
-  "cSpell.words": [
-    "Plex",
-    "docz",
-    "flexbox",
-    "monospace"
-  ],
+  "cSpell.words": ["Plex", "docz", "flexbox", "monospace"],
   "prettier.semi": false,
   "editor.formatOnSave": true,
-  "typescript.tsdk": "node_modules/typescript/lib"
+  "typescript.tsdk": "node_modules/typescript/lib",
+  "files.autoSave": "onFocusChange",
+  "tslint.enable": false,
+  "eslint.validate": [
+    "javascript",
+    "javascriptreact",
+    { "language": "typescript", "autoFix": true },
+    { "language": "typescriptreact", "autoFix": true }
+  ]
 }
