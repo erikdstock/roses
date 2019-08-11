@@ -6,8 +6,8 @@ import ssCss, {
 } from "@styled-system/css"
 import get from "lodash/get"
 import React from "react"
-import { RosesThemeObject } from "../Theme"
-import { RosesSC } from "../types"
+import { RosesThemeObject } from "./Theme"
+import { RosesSC } from "./types"
 
 /** The base style for Box and everything on up. */
 export const boxStyle: CSSObject = {
@@ -43,7 +43,7 @@ const themedComponent: (name: string) => InterpolationFn = (name: string) => {
   return themed(`${componentStylesRoot}.${name}`)
 }
 
-const rxHandler: InterpolationFn = ({ rx, ...r }) => {
+const rxHandler: InterpolationFn = ({ rx }) => {
   return rx && styledCss(rx)
 }
 

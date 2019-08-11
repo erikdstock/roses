@@ -1,4 +1,4 @@
-export * from "./util/styleComposition"
+export * from "./styleComposition"
 export * from "./Theme"
 export * from "./components/Typography"
 export * from "./components/Layout"

@@ -1,5 +1,4 @@
-import styled from "@emotion/styled"
-import { withStyleProps } from "../util/styleComposition"
+import { withStyleProps } from "../styleComposition"
 
 export const Button = withStyleProps({
   name: "Button",
