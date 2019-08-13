@@ -88,18 +88,18 @@ Given a theme:
     Rectangle: {
       color: ["black", "red"] // at 1st breakpoint the text turns red for some reason.
       padding: 1,  // indexed to `space` key
-      mx: 3
+      mx: 3,
+      variants: {
+        hot: {
+          bg: "primary"
+        },
+        cold: { ... }
+      }
+      
     },
     Widget: { ... }
   }
-  variants: {
-    Rectangle: {
-      hot: {
-        bg: "primary"
-      }
-      cold: { ... }
-    }
-  }
+
 }
 ```
 
@@ -109,7 +109,6 @@ We can make a `Rectangle using the full api:
 const Rectangle = themed({
   name: "Rectangle",
   component: "div",
-  defaultVariant: "hot",
 })
 ```
 
