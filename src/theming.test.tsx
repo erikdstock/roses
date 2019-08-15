@@ -1,7 +1,7 @@
 /** @jsx jsx */
 import { jsx } from "@emotion/core"
-import { themed } from "./theming"
-import { RosesTheme } from "./Theme"
+import { themed, simpleThemed } from "./theming"
+import { RosesTheme, RosesThemeObject } from "./Theme"
 import renderer from "react-test-renderer"
 import { baseTheme } from "./Theme/baseTheme"
 import { matchers } from "jest-emotion"
@@ -17,23 +17,23 @@ const theme = {
   },
 }
 
-expect.extend(matchers)
-
-describe("themed()", () => {
-  const localTheme = {
-    ...theme,
-    componentStyles: {
-      Widget: {
-        color: "primary",
-        variants: {
-          experimental: {
-            color: "secondary",
-          },
+const localTheme: RosesThemeObject = {
+  ...theme,
+  componentStyles: {
+    Widget: {
+      color: "primary",
+      variants: {
+        experimental: {
+          color: "secondary",
         },
       },
     },
-  }
+  },
+}
 
+expect.extend(matchers)
+
+describe("themed()", () => {
   it("adds component themes + variants from the theme", () => {
     const DivWidget = themed("Widget")
     const tree = renderer.create(
@@ -56,6 +56,28 @@ describe("themed()", () => {
     const tree = renderer.create(
       <RosesTheme theme={localTheme}>
         <DivWidget sx={{ color: "muted" }} />
+      </RosesTheme>
+    )
+    expect(tree.toJSON()).toMatchSnapshot()
+  })
+})
+
+describe("simpleThemed()", () => {
+  it("makes a themed div by default", () => {
+    const DivWidget = simpleThemed("Widget")
+    const tree = renderer.create(
+      <RosesTheme theme={localTheme}>
+        <DivWidget />
+      </RosesTheme>
+    )
+    expect(tree.toJSON()).toMatchSnapshot()
+  })
+
+  it("makes a themed other thing if you pass that tag in", () => {
+    const MyHeader = simpleThemed("Header", "header")
+    const tree = renderer.create(
+      <RosesTheme theme={localTheme}>
+        <MyHeader>Welcome to website.</MyHeader>
       </RosesTheme>
     )
     expect(tree.toJSON()).toMatchSnapshot()

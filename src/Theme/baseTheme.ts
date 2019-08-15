@@ -1,9 +1,9 @@
 import { Theme } from "@styled-system/css"
 import CSS from "csstype"
-import { RosesThemeObject } from "./types"
 /** Base theme taken from theme-ui.com/demo base Theme */
 export const baseTheme: Theme & {
-  styles: RosesThemeObject["htmlStyles"]
+  styles: any
+  fonts: any
   colors: {
     text: CSS.ColorProperty
     background: CSS.ColorProperty

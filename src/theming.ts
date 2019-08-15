@@ -1,5 +1,5 @@
 import styled from "@emotion/styled"
-import ssCss, { CSSObject, SystemStyleObject } from "@styled-system/css"
+import styledCss, { CSSObject } from "@styled-system/css"
 import get from "lodash/get"
 import React from "react"
 import { RosesThemeObject } from "./Theme"
@@ -7,63 +7,57 @@ import { RosesSC, RosesStyledComponent, RosesStyleProps } from "./types"
 import isPropValid from "@emotion/is-prop-valid"
 
 /** The base style for Box and everything on up. */
-export const boxStyle: CSSObject = {
-  boxSizing: "border-box",
+export const baseStyle: CSSObject = {
+  // Type assertion is required here so that type
+  // will not be widened by ts compiler to { boxSizing: string }
+  boxSizing: "border-box" as "border-box",
 }
 
-/** Clumsily force styledCss function to believe that there will be a theme present */
-type StyledCssFn = (o: SystemStyleObject) => CSSObject
-const styledCss = ssCss as StyledCssFn
-
-interface StyledInterpolationProps extends RosesStyleProps {
-  theme: RosesThemeObject
-}
-
-type InterpolationFn = (p: StyledInterpolationProps) => CSSObject | undefined
+type InterpolationFn = (
+  p: RosesStyleProps & { theme: RosesThemeObject }
+) => CSSObject | undefined
 
 const componentStylesRoot: keyof RosesThemeObject = "componentStyles"
 
 const validHtmlPropChecker = (prop: string) => {
-  // console.warn(prop, isPropValid(prop))
   return isPropValid(prop)
 }
 
 /**
- * Wrap a base styled component with:
- *   - a responsive, theme-aware style `sx` prop
- *   - a `variant` prop for accessing styles set on the theme.variants key
- * @example:
- *
- *  const Box = withStyleProps({name: 'Box', component: RawBox, defaultVariant: "hot"})
- *  const Widget = withStyleProps('Widget')
- *
+ * Add `sx` + `variant` props, get theme values
+ * @param name The key under componentStyles where this component's styles will be located
+ * @param as The type of element to return
+ * // TODO: Test
  */
-const themeDiv = (name: string): RosesSC => {
-  return styled("div", { shouldForwardProp: validHtmlPropChecker })<
-    RosesStyleProps
-  >(boxStyle, relevantStyles(`${componentStylesRoot}.${name}`), sxHandler)
+export const simpleThemed = (
+  name: string,
+  as: keyof JSX.IntrinsicElements = "div"
+): RosesSC => {
+  return styled<any, RosesStyleProps>(as, {
+    shouldForwardProp: validHtmlPropChecker,
+  })(baseStyle, relevantStyles(`${componentStylesRoot}.${name}`), sxHandler)
 }
 
-const sxHandler: InterpolationFn = ({ sx }) => {
-  return sx && styledCss(sx)
+/** Because @styled-system/css returns a theme-ready function,
+ *   but we are in that function now, just call it right away.
+ *   This way we don't interpolate an additional function for
+ *   emotion to execute.
+ */
+export const sxHandler: InterpolationFn = ({ sx, ...restProps }) => {
+  return sx && styledCss(sx)(restProps)
 }
 
-const relevantStyles: (
-  path: string
-) => (
-  props: RosesStyleProps & { theme: RosesThemeObject }
-) => CSSObject = themePath => ({ theme, variant }): CSSObject => {
+/** Find styles, extract and apply them + variants using @styled-system/css */
+// TODO: Refactor to allow passing styles + variants directly rather than putting them in the theme?
+const relevantStyles = (themePath: string): InterpolationFn => props => {
+  const { theme, variant } = props
   const { variants, ...styles } = get(theme, themePath, {})
   if (styles) {
-    if (variant && variants && Object.keys(variants).length) {
-      const selectedVariant = variants[variant]
-
-      return Object.keys(selectedVariant).length
-        ? styledCss({ ...styles, ...selectedVariant })
-        : styledCss(styles)
-    } else {
-      return styledCss(styles)
+    let selectedVariant
+    if (variant && variants) {
+      selectedVariant = variants[variant]
     }
+    return styledCss({ ...styles, ...selectedVariant })(props)
   } else return {}
 }
 
@@ -78,10 +72,10 @@ interface ThemedComponentOptions {
  * Wrap a base styled component with:
  *   - a responsive, theme-aware style `sx` prop
  *   - a `variant` prop for accessing styles set on the theme.variants key
- * @deprecated in favor of themed(), will be removed in 1.0.0
+ * @example:
  *
- *  const Box = withStyleProps({name: 'Box', component: RawBox, defaultVariant: "hot"})
- *  const Widget = withStyleProps('Widget')
+ *  const Box = themed({name: 'Box', component: RawBox, defaultVariant: "hot"})
+ *  const Widget = themed('Widget')
  *
  */
 export const themed = (
@@ -89,7 +83,7 @@ export const themed = (
 ): RosesStyledComponent => {
   if (typeof options === "string") {
     const name = options as keyof JSX.IntrinsicAttributes
-    return themeDiv(name)
+    return simpleThemed(name)
   } else {
     const {
       component,
@@ -98,9 +92,10 @@ export const themed = (
     } = options
 
     return component
-      ? styled(component as React.ComponentType<any>, { shouldForwardProp })<
-          RosesStyleProps
-        >(relevantStyles(`${componentStylesRoot}.${name}`), sxHandler)
-      : themeDiv(`${componentStylesRoot}.${name}`)
+      ? styled<React.ComponentType<any>, RosesStyleProps>(
+          component as React.ComponentType<any>,
+          { shouldForwardProp }
+        )(relevantStyles(`${componentStylesRoot}.${name}`), sxHandler)
+      : simpleThemed(`${componentStylesRoot}.${name}`)
   }
 }

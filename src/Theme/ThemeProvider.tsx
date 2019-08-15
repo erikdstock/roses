@@ -16,4 +16,4 @@ interface Props {
 export const RosesTheme: React.FunctionComponent<Props> = ({
   theme = defaultTheme,
   children,
-}) => <ThemeProvider theme={theme}>{children}</ThemeProvider>
+}) => <ThemeProvider<RosesThemeObject> theme={theme}>{children}</ThemeProvider>
