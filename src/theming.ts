@@ -27,7 +27,6 @@ const validHtmlPropChecker = (prop: string) => {
  * Add `sx` + `variant` props, get theme values
  * @param name The key under componentStyles where this component's styles will be located
  * @param as The type of element to return
- * // TODO: Test
  */
 export const simpleThemed = (
   name: string,
