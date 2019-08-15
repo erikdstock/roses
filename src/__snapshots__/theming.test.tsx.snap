@@ -1,5 +1,28 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
+exports[`simpleThemed() makes a themed div by default 1`] = `
+.emotion-0 {
+  box-sizing: border-box;
+  color: red;
+}
+
+<div
+  className="emotion-0"
+/>
+`;
+
+exports[`simpleThemed() makes a themed other thing if you pass that tag in 1`] = `
+.emotion-0 {
+  box-sizing: border-box;
+}
+
+<header
+  className="emotion-0"
+>
+  Welcome to website.
+</header>
+`;
+
 exports[`themed() adds component themes + variants from the theme 1`] = `
 .emotion-0 {
   box-sizing: border-box;
