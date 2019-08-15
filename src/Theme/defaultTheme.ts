@@ -1,9 +1,9 @@
 import { baseTheme } from "./baseTheme"
-import { RosesThemeObject } from "./types"
+import { RosesThemeObject, ThemeColors, ThemeFonts } from "./types"
 
 const { text, background, primary, secondary, muted } = baseTheme.colors
 
-const colors: RosesThemeObject["colors"] = {
+const colors: ThemeColors = {
   text,
   background,
   primary,
@@ -23,7 +23,7 @@ const colors: RosesThemeObject["colors"] = {
   },
 }
 
-const fonts: RosesThemeObject["fonts"] = {
+const fonts: ThemeFonts = {
   ...baseTheme.fonts,
   serif: "'Times New Roman', serif",
   body: "'Times New Roman', serif",
