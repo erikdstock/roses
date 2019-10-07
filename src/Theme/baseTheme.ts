@@ -1,5 +1,6 @@
 import { Theme } from "@styled-system/css"
 import CSS from "csstype"
+
 /** Base theme taken from theme-ui.com/demo base Theme */
 export const baseTheme: Theme & {
   styles: any
