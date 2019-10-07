@@ -32,7 +32,10 @@ _Emotion as the css-in-js library_: Early on I ran into some wrinkles around the
 
 _Responsive, theme-aware styles in a single prop_: Collaborators were less enthusiastic about the many `styled-system` props, especially when combined with the need to define Ts interfaces, account for the presence of a `theme` and know which props you could use where. By electing to restrict themed styles to a single prop, the total surface area of props to maintain and remember is greatly reduced. It is also designed to be more friendly to users who aren't completely sold on css-in-js. _Notably [this prop](#the-sx-prop) is baldly stolen from theme-ui._
 
-_Define core component styles and variants on the theme_: Because the `system-ui` theme spec is wide open, different libraries have augmented it with their own keys. This is fine, but I wanted to introduce a bit of stability and the ability to define core component styles like those exported from [rebass](#related-projects) within the theme itself. `@styled-system/css` makes this pretty straightforward, so I settled on top-level keys of `componentStyles`, `variants` and `htmlStyles (TODO)`. The result is much less overhead in defining components that are at their hearts the composition of a `div` and a few style objects.
+_Define core component styles and variants on the theme_: Because the `system-ui` theme spec is wide open, different libraries have augmented it with their own keys. This is fine, but I wanted to introduce a bit of stability and the ability to define core component styles like those exported from [rebass](#related-projects) within the theme itself. `@styled-system/css` makes this pretty straightforward:
+
+- I settled on a top-level `theme.componentStyles` key which includes style rules as well as its nested `variants`. The result is much less overhead in defining components that are at their hearts the composition of a `div` and a few style objects.
+- HTML elements follow the `theme-ui` pattern of using `theme.styles`, and a base set of these styles is included with the default theme- see [baseTheme](/src/Theme/baseTheme.ts) and [defaultTheme](/src/Theme/defaultTheme.ts) which extends it.
 
 ## Setup
 
@@ -41,7 +44,7 @@ Add the package and any missing peer dependencies:
 ```sh
 yarn add roses @styled-system/css @emotion/core @emotion/styled
 # if using ts
-# yarn add @types/styled-system__css @types/styled-system etc etc etc ...
+# yarn add -D @types/styled-system__css @types/styled-system etc ...
 ```
 
 ### Configure `ThemeProvider`
@@ -95,7 +98,7 @@ Given a theme:
         },
         cold: { ... }
       }
-      
+
     },
     Widget: { ... }
   }
@@ -122,7 +125,25 @@ Since this is all just emotion in the context of a system-ui theme under the cov
 
 ### Variants
 
-Variants defined in `theme.variants[ComponentName]` are accessible via the `variant` prop and applied over the base styles.
+Component variant styles can be defined via a special `variants` key, are accessible via the `variant` prop and applied over the base styles:
+
+```jsx
+theme.componentStyles.Card = {
+  p: 2,
+  m: 1,
+  display: "inline-block",
+  borderRadius: 2,
+  variants: {
+    shadow: {
+      boxShadow: "0 0 16px rgba(0, 0, 0, .25)",
+    },
+  },
+}
+
+// later...
+
+<Card variant="shadow">{ /* etc */ } </Card>
+```
 
 ### The `sx` prop
 

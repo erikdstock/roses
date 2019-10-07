@@ -30,10 +30,8 @@ type SystemStyleWithVariants = SystemStyleObject & Variants
 /** The roses theme follows the styled-system/system-ui theme specification */
 export type RosesThemeObject = Theme & {
   // colors: RosesThemeColors
-  /** Theme-ui html styles (incoming from baseTheme) */
+  /** HTML element styles (compatible with theme-ui) */
   styles?: { [elementName: string]: SystemStyleWithVariants }
-  /** Roses html styles */
-  htmlStyles?: { [elementName: string]: SystemStyleObject }
   /** Roses component styles */
   componentStyles?: { [componentName: string]: SystemStyleWithVariants }
   /** Custom component variant styles */
